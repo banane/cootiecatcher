@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* CootieAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CootieAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28860BE40F44EE6400985440 /* CoreData.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		9538F52F1178405500C37A88 /* cootie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9538F52E1178405500C37A88 /* cootie.wav */; };
+		9538F58C1178446300C37A88 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9538F58B1178446300C37A88 /* AudioToolbox.framework */; };
+		95426307114D92CB00AA5D28 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95426305114D92CB00AA5D28 /* RootViewController.m */; };
+		95426308114D92CB00AA5D28 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95426306114D92CB00AA5D28 /* RootViewController.xib */; };
+		9546DA1211728A050098EEA7 /* wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546DA1111728A050098EEA7 /* wide.png */; };
+		9546DA1411728A110098EEA7 /* tall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546DA1311728A110098EEA7 /* tall.png */; };
+		9546DA1611728A190098EEA7 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546DA1511728A190098EEA7 /* closed.png */; };
+		955399D61176744A00ED696E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 955399D51176744A00ED696E /* Icon.png */; };
+		956AAA301173D4E500FA95C9 /* Fortune.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 956AAA2F1173D4E500FA95C9 /* Fortune.xcdatamodel */; };
+		956AAA371173D52200FA95C9 /* Fortune.m in Sources */ = {isa = PBXBuildFile; fileRef = 956AAA361173D52200FA95C9 /* Fortune.m */; };
+		957A93021159BB1F006760A3 /* FortuneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957A93001159BB1F006760A3 /* FortuneViewController.m */; };
+		957A93031159BB1F006760A3 /* FortuneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 957A93011159BB1F006760A3 /* FortuneViewController.xib */; };
+		9588982E115BF5B60008AB8D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9588982D115BF5B60008AB8D /* DetailViewController.xib */; };
+		95EF5F83115A9A93009A01A2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5F81115A9A93009A01A2 /* DetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* CootieAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CootieAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* CootieAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CootieAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Cootie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cootie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28860BE40F44EE6400985440 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AAE50D9B0CCF005BE974 /* Cootie_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cootie_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Cootie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cootie-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9512086A115952D80009A649 /* Cootie2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cootie2-Info.plist"; sourceTree = "<group>"; };
+		9538F52E1178405500C37A88 /* cootie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cootie.wav; sourceTree = "<group>"; };
+		9538F58B1178446300C37A88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		95426304114D92CB00AA5D28 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		95426305114D92CB00AA5D28 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		95426306114D92CB00AA5D28 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Classes/RootViewController.xib; sourceTree = "<group>"; };
+		9546DA1111728A050098EEA7 /* wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wide.png; sourceTree = "<group>"; };
+		9546DA1311728A110098EEA7 /* tall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tall.png; sourceTree = "<group>"; };
+		9546DA1511728A190098EEA7 /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
+		955399D51176744A00ED696E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		956AAA2F1173D4E500FA95C9 /* Fortune.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Fortune.xcdatamodel; sourceTree = "<group>"; };
+		956AAA351173D52200FA95C9 /* Fortune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fortune.h; sourceTree = "<group>"; };
+		956AAA361173D52200FA95C9 /* Fortune.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fortune.m; sourceTree = "<group>"; };
+		957A92FF1159BB1F006760A3 /* FortuneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FortuneViewController.h; sourceTree = "<group>"; };
+		957A93001159BB1F006760A3 /* FortuneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FortuneViewController.m; sourceTree = "<group>"; };
+		957A93011159BB1F006760A3 /* FortuneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FortuneViewController.xib; path = Classes/FortuneViewController.xib; sourceTree = "<group>"; };
+		9588982D115BF5B60008AB8D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailViewController.xib; path = Classes/DetailViewController.xib; sourceTree = "<group>"; };
+		95EF5F80115A9A93009A01A2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		95EF5F81115A9A93009A01A2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */,
+				9538F58C1178446300C37A88 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* CootieAppDelegate.h */,
+				1D3623250D0F684500981E51 /* CootieAppDelegate.m */,
+				95426304114D92CB00AA5D28 /* RootViewController.h */,
+				95426305114D92CB00AA5D28 /* RootViewController.m */,
+				957A92FF1159BB1F006760A3 /* FortuneViewController.h */,
+				957A93001159BB1F006760A3 /* FortuneViewController.m */,
+				95EF5F80115A9A93009A01A2 /* DetailViewController.h */,
+				95EF5F81115A9A93009A01A2 /* DetailViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Cootie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources-iPhone */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				9512086A115952D80009A649 /* Cootie2-Info.plist */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AAE50D9B0CCF005BE974 /* Cootie_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources-iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				9538F52E1178405500C37A88 /* cootie.wav */,
+				955399D51176744A00ED696E /* Icon.png */,
+				956AAA351173D52200FA95C9 /* Fortune.h */,
+				956AAA361173D52200FA95C9 /* Fortune.m */,
+				9546DA1511728A190098EEA7 /* closed.png */,
+				9546DA1311728A110098EEA7 /* tall.png */,
+				9546DA1111728A050098EEA7 /* wide.png */,
+				9588982D115BF5B60008AB8D /* DetailViewController.xib */,
+				957A93011159BB1F006760A3 /* FortuneViewController.xib */,
+				95426306114D92CB00AA5D28 /* RootViewController.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Cootie-Info.plist */,
+				956AAA2F1173D4E500FA95C9 /* Fortune.xcdatamodel */,
+			);
+			name = "Resources-iPhone";
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				28860BE40F44EE6400985440 /* CoreData.framework */,
+				9538F58B1178446300C37A88 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Cootie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Cootie" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cootie;
+			productName = Cootie;
+			productReference = 1D6058910D05DD3D006BFB54 /* Cootie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cootie" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Cootie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				95426308114D92CB00AA5D28 /* RootViewController.xib in Resources */,
+				957A93031159BB1F006760A3 /* FortuneViewController.xib in Resources */,
+				9588982E115BF5B60008AB8D /* DetailViewController.xib in Resources */,
+				9546DA1211728A050098EEA7 /* wide.png in Resources */,
+				9546DA1411728A110098EEA7 /* tall.png in Resources */,
+				9546DA1611728A190098EEA7 /* closed.png in Resources */,
+				955399D61176744A00ED696E /* Icon.png in Resources */,
+				9538F52F1178405500C37A88 /* cootie.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* CootieAppDelegate.m in Sources */,
+				95426307114D92CB00AA5D28 /* RootViewController.m in Sources */,
+				957A93021159BB1F006760A3 /* FortuneViewController.m in Sources */,
+				95EF5F83115A9A93009A01A2 /* DetailViewController.m in Sources */,
+				956AAA301173D4E500FA95C9 /* Fortune.xcdatamodel in Sources */,
+				956AAA371173D52200FA95C9 /* Fortune.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Cootie_Prefix.pch;
+				INFOPLIST_FILE = "Cootie-Info.plist";
+				PRODUCT_NAME = Cootie;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Cootie_Prefix.pch;
+				INFOPLIST_FILE = "Cootie-Info.plist";
+				PRODUCT_NAME = Cootie;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Cootie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cootie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
