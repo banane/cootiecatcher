@@ -14,7 +14,7 @@
 		28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28860BE40F44EE6400985440 /* CoreData.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
-		9538F52F1178405500C37A88 /* cootie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9538F52E1178405500C37A88 /* cootie.wav */; };
+		9517278811880178003120ED /* cootie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9517278711880178003120ED /* cootie.wav */; };
 		9538F58C1178446300C37A88 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9538F58B1178446300C37A88 /* AudioToolbox.framework */; };
 		95426307114D92CB00AA5D28 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95426305114D92CB00AA5D28 /* RootViewController.m */; };
 		95426308114D92CB00AA5D28 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95426306114D92CB00AA5D28 /* RootViewController.xib */; };
@@ -43,7 +43,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Cootie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cootie-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		9512086A115952D80009A649 /* Cootie2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cootie2-Info.plist"; sourceTree = "<group>"; };
-		9538F52E1178405500C37A88 /* cootie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cootie.wav; sourceTree = "<group>"; };
+		9517278711880178003120ED /* cootie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cootie.wav; sourceTree = "<group>"; };
 		9538F58B1178446300C37A88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		95426304114D92CB00AA5D28 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		95426305114D92CB00AA5D28 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources-iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				9538F52E1178405500C37A88 /* cootie.wav */,
+				9517278711880178003120ED /* cootie.wav */,
 				955399D51176744A00ED696E /* Icon.png */,
 				956AAA351173D52200FA95C9 /* Fortune.h */,
 				956AAA361173D52200FA95C9 /* Fortune.m */,
@@ -213,7 +213,7 @@
 				9546DA1411728A110098EEA7 /* tall.png in Resources */,
 				9546DA1611728A190098EEA7 /* closed.png in Resources */,
 				955399D61176744A00ED696E /* Icon.png in Resources */,
-				9538F52F1178405500C37A88 /* cootie.wav in Resources */,
+				9517278811880178003120ED /* cootie.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

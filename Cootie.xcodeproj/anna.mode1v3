@@ -302,9 +302,6 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>29B97315FDCFA39411CA2CEA</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -314,13 +311,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 20}, {212, 590}}</string>
+							<string>{{0, 0}, {212, 597}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -332,14 +329,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {229, 608}}</string>
+						<string>{{0, 0}, {229, 615}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>212</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 129 1280 649 0 0 1280 778 </string>
+						<string>0 122 794 656 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -357,7 +354,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FortuneViewController.m</string>
+								<string>RootViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -365,11 +362,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FortuneViewController.m</string>
+										<string>RootViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9517272E1187F68C003120ED</string>
+										<string>9517277211880000003120ED</string>
 										<key>history</key>
 										<array>
 											<string>95936291115C23A200127E7F</string>
@@ -393,8 +390,8 @@
 											<string>955EA55A11878A9900F4616E</string>
 											<string>955EA56E11878BBF00F4616E</string>
 											<string>951726901187E227003120ED</string>
-											<string>951726BB1187EF07003120ED</string>
-											<string>9517271D1187F557003120ED</string>
+											<string>951727681187FF74003120ED</string>
+											<string>951727691187FF74003120ED</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -406,14 +403,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1046, 446}}</string>
+								<string>{{0, 0}, {560, 453}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 129 1280 649 0 0 1280 778 </string>
+								<string>0 122 794 656 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>446pt</string>
+							<string>453pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -426,9 +423,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 451}, {1046, 157}}</string>
+								<string>{{0, 458}, {560, 157}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 129 1280 649 0 0 1280 778 </string>
+								<string>0 122 794 656 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -437,7 +434,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1046pt</string>
+					<string>560pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -592,14 +589,16 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>951726BE1187EF07003120ED</string>
+		<string>951727711187FFF7003120ED</string>
+		<string>9517276C1187FF74003120ED</string>
+		<string>9517276D1187FF74003120ED</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>954262F3114D8BED00AA5D28</string>
-		<string>/Users/anna/dev/iPhone/cootiecatcher/Cootie.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/anna/dev/iPhone/cootiecatcher/Cootie.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 129 1280 649 0 0 1280 778 </string>
+	<string>0 122 794 656 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
