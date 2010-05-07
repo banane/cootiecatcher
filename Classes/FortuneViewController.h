@@ -10,10 +10,13 @@
 @interface FortuneViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
 	NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
+	
+	NSArray *resetValues;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSArray *resetValues;
 
 -(void)reset;
 

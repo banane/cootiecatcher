@@ -19,6 +19,8 @@
 	UIWindow *window;
     UINavigationController *navCtrl;
 	
+	NSArray *resetValues;
+	
 	
 }
 
@@ -28,6 +30,8 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navCtrl;
+
+@property (nonatomic, retain) NSArray *resetValues;
 
 
 - (NSString *)applicationDocumentsDirectory;

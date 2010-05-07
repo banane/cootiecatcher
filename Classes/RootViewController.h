@@ -20,17 +20,21 @@
 	IBOutlet UIButton *craftyButton;
 	
 	IBOutlet UILabel *FortuneLabel;
-	
+		
 	IBOutlet UIImageView *ClosedImageView;
 	
 	SystemSoundID mysound;
-	
+		
 	int stage;
 	int lastState;
 	
 	NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
-	
+
+	NSArray *colors;
+	NSArray *imgNumsArray;
+	NSArray *resetValues;
+	NSArray *masterImageArray;
 	NSMutableArray *fortuneArray;
 
 }
@@ -45,6 +49,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *FortuneLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *ClosedImageView;
 
+
 @property (nonatomic) int stage;
 @property (nonatomic) int lastState;
 
@@ -54,6 +59,10 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, retain) NSMutableArray *fortuneArray;
+@property (nonatomic, retain) NSArray *imgNumsArray;
+@property (nonatomic, retain) NSArray *masterImageArray;
+@property (nonatomic, retain) NSArray *colors;
+@property (nonatomic, retain) NSArray *resetValues;
 
 - (IBAction)click:(id)sender;
 - (IBAction)playAgain;

@@ -12,10 +12,13 @@
 
 @synthesize selectedObject;
 @synthesize fortuneTextField;
+@synthesize saveButton;
+@synthesize tmpFortune;
 
 
 -(IBAction)textFieldDidEndEditing:(UITextField *)textField{	
-	[selectedObject setValue:[textField text] forKey:@"FortuneString"];
+	//[selectedObject setValue:[textField text] forKey:@"FortuneString"];
+	tmpFortune = [textField text];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -23,6 +26,16 @@
 	return NO;
 }
 
+
+-(IBAction)saveClicked:(id)sender{
+	tmpFortune = [fortuneTextField text];
+	[selectedObject setValue:tmpFortune forKey:@"FortuneString"];
+	
+}
+-(IBAction)clearClicked:(id)sender{
+	fortuneTextField.text = @"";
+	
+}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -38,8 +51,9 @@
 
  - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
  // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
+//	 return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	 return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
