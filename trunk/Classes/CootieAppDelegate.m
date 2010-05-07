@@ -13,6 +13,7 @@
 
 @synthesize window;
 @synthesize navCtrl;
+@synthesize resetValues;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
@@ -22,7 +23,21 @@
 	RootViewController *rvc = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
 	rvc.managedObjectContext = context;
 
-
+	// setup application-wide static variable here
+	resetValues = [[[NSArray alloc] initWithObjects:								  
+								  @"You will be president.",
+								  @"Giraffes are neat.",
+								  @"Someone will steal your pencil.",
+								  @"Give someone a dollar.",
+								  @"Nobody gets you, like I get you.",
+								  @"Your secret is safe.",
+								  @"You will make an amazing pie.",
+								  @"You wish will come true.",
+								  nil ] retain];
+	
+	
+	rvc.resetValues = resetValues;
+	NSLog(@"resetValues in capp delegate:%@", resetValues);
 	[window addSubview:[navCtrl view]];
     [window makeKeyAndVisible];	
 
@@ -64,38 +79,23 @@
 	NSArray *fortunes = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
 	[fetchRequest release];
 	
-		
-	NSLog(@"%d ************", fortunes.count);
+	
+	// initialize core data if necessary
+//	NSLog(@"%d ************", fortunes.count);
 	
 	if(fortunes.count <8){
-		NSLog(@"in insert data part");
-		NSArray *resetValuesArray = [[[NSArray alloc] initWithObjects:								  
-									 @"You will be president.",
-									 @"Giraffes are neat.",
-									 @"Someone will steal your pencil.",
-									 @"Give someone a dollar.",
-									 @"Nobody gets you, like I get you.",
-									 @"Your secret is safe.",
-									 @"You will make an amazing pie.",
-									 @"You wish will come true.",
-									 nil ] autorelease];
-		int i = 0;
-		for (NSString *f_str in resetValuesArray){
-			NSLog(@"in insert part");
+		for (int i=0;i<[resetValues count];i++){
+
 			NSManagedObject *fortune = [NSEntityDescription insertNewObjectForEntityForName:@"Fortune" inManagedObjectContext:managedObjectContext];
-			[fortune setValue:f_str forKey:@"FortuneString"];
+			[fortune setValue:[resetValues objectAtIndex:i] forKey:@"FortuneString"];
 			[fortune setValue:[ NSNumber numberWithInt:i ]  forKey:@"FortunePosition"];
 			if (![self.managedObjectContext save:&error]) {
 				NSLog(@"Error adding Fortune - error:%@",error);
 			}
-			i++;
 		}
 	} else{
 		NSLog(@"fortune count upon app start is: %d",fortunes.count);
 	}
-	
-	
-	NSLog(@"end ofcheckdata");
 }
 
 #pragma mark -

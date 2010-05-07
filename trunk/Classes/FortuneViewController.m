@@ -15,7 +15,7 @@
 
 @implementation FortuneViewController
 
-@synthesize fetchedResultsController, managedObjectContext;
+@synthesize fetchedResultsController, managedObjectContext, resetValues;
 
 
 - (void)reset {
@@ -60,7 +60,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 	if(buttonIndex == 1){		
 		// delete all fortunes
-		NSLog(@"in user chose to delete and add canned fortunes");
+
 		
 		NSFetchRequest *fRequest = [[[NSFetchRequest alloc] init] autorelease];
 		[fRequest setEntity:[NSEntityDescription entityForName:@"Fortune" inManagedObjectContext:managedObjectContext]];
@@ -71,32 +71,18 @@
 		for (NSManagedObject * fort in oldForts) {
 			[managedObjectContext deleteObject:fort];
 		}
-
-		// add the canned fortunes
-		NSArray * resetValuesArray = [[NSArray alloc] initWithObjects:								  
-									 @"You will be president.",
-									 @"Giraffes are neat.",
-									 @"Someone will steal your pencil.",
-									 @"Give someone a dollar.",
-									 @"Nobody gets you, like I get you.",
-									 @"Your secret is safe.",
-									 @"You will make an amazing pie.",
-									 @"You wish will come true.",
-									 nil ] ;
 	
-		int i = 0;
-		NSLog(@"past deletion, onto addition:  -->");
-		for (NSString *f_str in resetValuesArray) {
+		int i=0;
+		for(NSString *f_str in resetValues){
 			NSManagedObject *newFortune = [NSEntityDescription insertNewObjectForEntityForName:@"Fortune" inManagedObjectContext:managedObjectContext];
 			[newFortune setValue:f_str forKey:@"FortuneString"];
-			[newFortune setValue:[ NSNumber numberWithInt:i ]  forKey:@"FortunePosition"];
+			[newFortune setValue:[NSNumber numberWithInt:i] forKey:@"FortunePosition"];
 
 			if (![managedObjectContext save:&error]) {
 				NSLog(@"Error adding Fortune - error:%@",error);
 			}
 			i++;
 		}
-		[resetValuesArray release];
 		[oldForts release];
 	}
 }
@@ -148,6 +134,7 @@
 	
 	
 	[self.navigationController pushViewController:detailViewController animated:YES];
+//	[self presentModalViewController:self.navigationController animated:YES];
 	
 	[detailViewController release];
 }

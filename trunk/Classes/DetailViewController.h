@@ -12,12 +12,20 @@
 	
 	NSManagedObject	*selectedObject;
 	IBOutlet UITextField *fortuneTextField;
+	IBOutlet UIButton  *saveButton;
+	NSString *tmpFortune;
+	
 }
 
 @property (nonatomic, retain) NSManagedObject *selectedObject;
 @property (nonatomic, retain) UITextField *fortuneTextField;
+@property (nonatomic, retain) UIButton *saveButton;
+@property (nonatomic, retain) NSString *tmpFortune;
+
 
 -(IBAction)textFieldDidEndEditing:(UITextField *)textField;
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
+-(IBAction)clearClicked:(id)sender;
+-(IBAction)saveClicked:(id)sender;
 
 @end

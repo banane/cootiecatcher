@@ -31,7 +31,11 @@
 @synthesize managedObjectContext;
 @synthesize fetchedResultsController;
 @synthesize fortuneArray;
+@synthesize colors;
+@synthesize imgNumsArray;
+@synthesize masterImageArray;
 @synthesize mysound;
+@synthesize resetValues;
 
 
 - (void)viewDidLoad {
@@ -39,13 +43,32 @@
 	
 	CootieAppDelegate *appDelegate = (CootieAppDelegate *)[[UIApplication sharedApplication] delegate];
 	self.managedObjectContext = appDelegate.managedObjectContext;
+	self.resetValues = appDelegate.resetValues;
 
 	NSError *error = nil;
 	[[self fetchedResultsController] performFetch:&error];
 		
 	stage = 0;
 	lastState = 0;
+	
+	/* static arrays */
+	
+	colors = [[[NSArray alloc] initWithObjects: @"red", @"green",@"blue", @"yellow", nil] retain];
 
+
+	imgNumsArray = [[NSArray alloc] initWithObjects:[[NSArray alloc] initWithObjects:
+														[NSNumber numberWithInt:1],
+														[NSNumber numberWithInt:6],
+														[NSNumber numberWithInt:5],
+														[NSNumber numberWithInt:2],nil],
+													[[NSArray alloc] initWithObjects:
+														[NSNumber numberWithInt:8],
+														[NSNumber numberWithInt:7],
+														[NSNumber numberWithInt:4],
+														[NSNumber numberWithInt:3],nil ],nil ];	
+	
+	masterImageArray = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"tall.png"], [UIImage imageNamed:@"wide.png"], [UIImage imageNamed:@"closed.png"], nil] ;
+	
 	/* build fortunearray once - for view load */
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
@@ -53,6 +76,7 @@
     [fetchRequest setEntity:entity];
 	[fetchRequest setReturnsObjectsAsFaults:NO];
 		
+	// use this instead of reset values b/c reflects changes from next view, details
 	fortuneArray = [[context executeFetchRequest:fetchRequest error:&error] retain] ;
 
 	//[entity release];
@@ -74,38 +98,22 @@
 - (IBAction)click:(id)sender;
 {
 	
-	NSArray *tallA = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:6],  [NSNumber numberWithInt:5],  [NSNumber numberWithInt:2], nil]  ;		
-	NSArray *wideA = [NSArray arrayWithObjects: [NSNumber numberWithInt:8],  [NSNumber numberWithInt:7],  [NSNumber numberWithInt:4],  [NSNumber numberWithInt:3],nil] ;
-
-
 	int buttonInt = [sender tag];
-	
 	int flipTimes = 0;
-	if(stage == 0) { //color round- the char length of the word
-		NSArray *colors = [[[NSArray alloc] initWithObjects: @"red", @"green",@"blue", @"yellow", nil] autorelease];
-		NSString *tmp = [colors objectAtIndex:buttonInt]; 
-		flipTimes = tmp.length;
-		//[colors release];
-	} else {  // all other rounds interpret the id to displayed numbers based on state
-		if(lastState ==0){
-			flipTimes = [[tallA objectAtIndex:buttonInt] intValue];
-		} else {
-			flipTimes = [[wideA objectAtIndex:buttonInt] intValue];
-		}
-		
-	}	
-	// logging, animate for number rounds
+	if(stage == 0) {						//color round- the char length of the word
+		flipTimes = [[colors objectAtIndex:buttonInt] length];
+	} else {								// all other rounds interpret the id to displayed numbers based on state
+		flipTimes = [[[imgNumsArray objectAtIndex:lastState] objectAtIndex:buttonInt] intValue];
+	}  
+											// logging, animate for number rounds
 	NSLog(@"play info:stage %d, fliptimes %d, buttonInt %d, lastState %d",stage, flipTimes, buttonInt, lastState);
-	
-// setup final display actions for rounds
-	
-	if(stage <3 ){			
-		[self animateToy:flipTimes];		
-	}
-	if(stage<=2){
+
+							// setup final display actions for rounds
+
+	if (stage < 3) {          
+		[self animateToy:flipTimes];        
 		[self playSound];
-	}
-	if(stage ==3){
+	} else if (stage == 3) {
 		NSLog(@"in stage is 3");
 		[self revealFortune:flipTimes];
 	}
@@ -117,29 +125,22 @@
 	NSLog(@"beginning in animate toy ------------ numtimes: %d", numTimes);
 	
 	int alternator = lastState;
-	NSArray* masterImageArray = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"tall.png"], [UIImage imageNamed:@"wide.png"], [UIImage imageNamed:@"closed.png"], nil] ;
+	
 	NSMutableArray *animationArray = [[NSMutableArray alloc] init] ;
 	
 	for(int i=1; i<=numTimes; i++){
 		
 		// flip alternator
-		if(alternator == 0){
-			alternator = 1;
-		} else {
-			alternator = 0;
-		}
-
+		alternator ^=1;
 		[animationArray addObject:[masterImageArray objectAtIndex:alternator]] ;
 		
 		// store the last state of tall/wide for next stage
-		if(i==numTimes){
-			lastState = alternator;
-		} 
 		if (i<numTimes){
 			[animationArray addObject:[masterImageArray objectAtIndex:2]]; // helps make it the "look" of the cootiecatcher
 		}
 	}
-//	[ClosedImageView.animationImages release];
+	lastState = alternator;
+
 	ClosedImageView.animationImages = nil; // for good measure, clear it out before assigning
 	ClosedImageView.animationImages = animationArray; 
 	ClosedImageView.animationDuration = 2.0;// seconds	
@@ -148,12 +149,8 @@
 	[ClosedImageView startAnimating]; 	
 	[ClosedImageView setImage:[masterImageArray objectAtIndex:lastState]];
 
-
-	NSLog(@"ending animate array .........................animation array count: %d", [animationArray count]);
-	NSLog(@"retain counts, anim: %d and master: %d, civ.animimgs %d", [animationArray retainCount], [masterImageArray retainCount], [ClosedImageView.animationImages retainCount]);
 	stage ++; 
 	
-	[masterImageArray release];
 	[animationArray release];
 }
 
@@ -161,16 +158,15 @@
 - (void)revealFortune:(int)fortuneID{
 	fortuneID --; // indexes start at 0 not 1
 	NSLog(@"the fortune count: %d and retain count %d",[fortuneArray count], [fortuneArray retainCount]);
-	NSObject *selectedObj = [[fortuneArray objectAtIndex:fortuneID] retain];
-	NSString *fortuneString = [[selectedObj valueForKey:@"FortuneString"] retain];
+	NSObject *selectedObj = [fortuneArray objectAtIndex:fortuneID] ;
+	NSString *fortuneString = [selectedObj valueForKey:@"FortuneString"];
 	FortuneLabel.text = fortuneString;
-	[fortuneString release];
-	[selectedObj release];
+
 
 	NSLog(@"%@ the fortunestring, fortuneID (-1), %d", fortuneString, fortuneID);
 	
 	//clean out closedimagearray	 
-	[ClosedImageView setImage:[UIImage imageNamed:@"closed.png"]];
+	[ClosedImageView setImage:[masterImageArray objectAtIndex:2]];
 	
 	ClosedImageView.hidden = YES;
 	YellowButton.hidden = YES;
@@ -188,7 +184,7 @@
 - (IBAction) playAgain {
 	NSLog(@"in playAgain");
 	ClosedImageView.animationImages = nil;
-	[ClosedImageView setImage:[UIImage imageNamed:@"closed.png"]];
+	[ClosedImageView setImage:[masterImageArray objectAtIndex:2]];
 	
 	FortuneLabel.hidden = YES;
 	AgainButton.hidden = YES;
@@ -204,8 +200,8 @@
 	stage = 0;
 	lastState = 0;
 	
-	NSLog(@"play again");
-	NSLog(@"retaincount for civ.anim %d", [ClosedImageView.animationImages retainCount]);
+//	NSLog(@"play again");
+//	NSLog(@"retaincount for civ.anim %d", [ClosedImageView.animationImages retainCount]);
 }
 
 
@@ -216,6 +212,8 @@
 
 - (IBAction)clickFortune: (id)sender{
 	FortuneViewController *fvc = [[FortuneViewController alloc] initWithStyle:UITableViewStylePlain];	
+	fvc.resetValues = resetValues;
+	NSLog(@"in rvc: resetValues: %@", resetValues);
 	[[self navigationController] pushViewController:fvc animated: YES];
 	[fvc autorelease];
 	
@@ -284,6 +282,9 @@
 	[ClosedImageView release];
 
 	[fortuneArray release];
+	[colors release];
+	[imgNumsArray release];
+	[masterImageArray release];
 	
     [super dealloc];
 }
