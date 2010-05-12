@@ -12,16 +12,16 @@
 
 @interface RootViewController : UIViewController {
 
-	IBOutlet UIButton *BlueButton;
-	IBOutlet UIButton *YellowButton;
-	IBOutlet UIButton *RedButton;
-	IBOutlet UIButton *GreenButton;
-	IBOutlet UIButton *AgainButton;
+	IBOutlet UIButton *blueButton;
+	IBOutlet UIButton *yellowButton;
+	IBOutlet UIButton *redButton;
+	IBOutlet UIButton *greenButton;
+	IBOutlet UIButton *againButton;
 	IBOutlet UIButton *craftyButton;
 	
-	IBOutlet UILabel *FortuneLabel;
+	IBOutlet UILabel *fortuneLabel;
 		
-	IBOutlet UIImageView *ClosedImageView;
+	IBOutlet UIImageView *closedImageView;
 	
 	SystemSoundID mysound;
 		
@@ -36,18 +36,19 @@
 	NSArray *resetValues;
 	NSArray *masterImageArray;
 	NSMutableArray *fortuneArray;
+	UIAlertView *infoAlert;
 
 }
 
-@property (nonatomic, retain) IBOutlet UIButton *BlueButton;
-@property (nonatomic, retain) IBOutlet UIButton *YellowButton;
-@property (nonatomic, retain) IBOutlet UIButton *RedButton;
-@property (nonatomic, retain) IBOutlet UIButton *GreenButton;
-@property (nonatomic, retain) IBOutlet UIButton *AgainButton;
+@property (nonatomic, retain) IBOutlet UIButton *blueButton;
+@property (nonatomic, retain) IBOutlet UIButton *yellowButton;
+@property (nonatomic, retain) IBOutlet UIButton *redButton;
+@property (nonatomic, retain) IBOutlet UIButton *greenButton;
+@property (nonatomic, retain) IBOutlet UIButton *againButton;
 @property (nonatomic, retain) IBOutlet UIButton *craftyButton;
 
-@property (nonatomic, retain) IBOutlet UILabel *FortuneLabel;
-@property (nonatomic, retain) IBOutlet UIImageView *ClosedImageView;
+@property (nonatomic, retain) IBOutlet UILabel *fortuneLabel;
+@property (nonatomic, retain) IBOutlet UIImageView *closedImageView;
 
 
 @property (nonatomic) int stage;
@@ -63,10 +64,12 @@
 @property (nonatomic, retain) NSArray *masterImageArray;
 @property (nonatomic, retain) NSArray *colors;
 @property (nonatomic, retain) NSArray *resetValues;
+@property (nonatomic, retain) UIAlertView *infoAlert;
 
 - (IBAction)click:(id)sender;
 - (IBAction)playAgain;
-- (IBAction)clickFortune: (id) sender;
+- (IBAction)clickFortune:(id)sender;
+- (IBAction)viewInfoAlert;
 - (void) playSound;
 - (void)animateToy:(int)numTimes;
 - (void)revealFortune:(int)fortuneID;

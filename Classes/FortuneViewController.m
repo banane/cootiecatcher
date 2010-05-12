@@ -39,6 +39,9 @@
 
 
 - (void)viewDidLoad {
+	
+	[[self navigationController] setNavigationBarHidden:NO animated:YES];
+
     [super viewDidLoad];
 	NSLog(@"inside fvc");
 
@@ -127,16 +130,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:[NSBundle mainBundle]];
+	DetailViewController *dvc = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:[NSBundle mainBundle]];
 	NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
 	
-	detailViewController.selectedObject = selectedObject;
-	
-	
-	[self.navigationController pushViewController:detailViewController animated:YES];
-//	[self presentModalViewController:self.navigationController animated:YES];
-	
-	[detailViewController release];
+	dvc.selectedObject = selectedObject;
+	[self.navigationController pushViewController:dvc animated:YES];
+	[dvc release];
 }
 
 
@@ -163,6 +162,8 @@
 			NSLog(@"Unresolved error in commiteditingstyle %@, %@", error, [error userInfo]);
 			abort();
 		}
+		[error release];
+		[context release];
 	}   
 }
 
