@@ -49,9 +49,6 @@
 	return YES;
 }
 
-/**
- applicationWillTerminate: saves changes in the application's managed object context before the application terminates.
- */
 - (void)applicationWillTerminate:(UIApplication *)application {
 	
     NSError *error = nil;
@@ -64,9 +61,8 @@
     }
 }
 
+- (void)checkData{
 
-- (void) checkData{
-	//see how many fortunes are in there
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Fortune" inManagedObjectContext:managedObjectContext]];
 	
@@ -78,10 +74,6 @@
 	NSError *error;	
 	NSArray *fortunes = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
 	[fetchRequest release];
-	
-	
-	// initialize core data if necessary
-//	NSLog(@"%d ************", fortunes.count);
 	
 	if(fortunes.count <8){
 		for (int i=0;i<[resetValues count];i++){
@@ -115,10 +107,6 @@
     }
     return managedObjectContext;
 }
-
-
-
-
 
 - (NSManagedObjectModel *)managedObjectModel {
 	
@@ -156,9 +144,6 @@
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
-
-#pragma mark -
-#pragma mark Memory management
 
 - (void)dealloc {
 	

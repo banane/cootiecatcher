@@ -35,6 +35,6 @@
 
 
 - (NSString *)applicationDocumentsDirectory;
-- (void) checkData;
+- (void)checkData;
 @end
 

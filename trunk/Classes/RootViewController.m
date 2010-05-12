@@ -14,19 +14,19 @@
 
 @implementation RootViewController
 
-@synthesize BlueButton;
-@synthesize YellowButton;
-@synthesize RedButton;
-@synthesize GreenButton;
-@synthesize AgainButton;
+@synthesize blueButton;
+@synthesize yellowButton;
+@synthesize redButton;
+@synthesize greenButton;
+@synthesize againButton;
 @synthesize craftyButton;
 
-@synthesize FortuneLabel;
+@synthesize fortuneLabel;
 
 @synthesize stage;
 @synthesize lastState;
 
-@synthesize ClosedImageView;
+@synthesize closedImageView;
 
 @synthesize managedObjectContext;
 @synthesize fetchedResultsController;
@@ -36,10 +36,11 @@
 @synthesize masterImageArray;
 @synthesize mysound;
 @synthesize resetValues;
-
+@synthesize infoAlert;
 
 - (void)viewDidLoad {
-		// setup the static arrays for game play
+	// setup the static arrays for game play
+	[[self navigationController] setNavigationBarHidden:YES animated:NO];
 	
 	CootieAppDelegate *appDelegate = (CootieAppDelegate *)[[UIApplication sharedApplication] delegate];
 	self.managedObjectContext = appDelegate.managedObjectContext;
@@ -76,7 +77,6 @@
     [fetchRequest setEntity:entity];
 	[fetchRequest setReturnsObjectsAsFaults:NO];
 		
-	// use this instead of reset values b/c reflects changes from next view, details
 	fortuneArray = [[context executeFetchRequest:fetchRequest error:&error] retain] ;
 
 	//[entity release];
@@ -89,11 +89,17 @@
 	
 	// Identify it as not a UI Sound
     AudioServicesCreateSystemSoundID(baseURL, &mysound);
-	AudioServicesPropertyID flag = 0;  // 0 means always play
+	AudioServicesPropertyID flag = 0; 
 	AudioServicesSetProperty(kAudioServicesPropertyIsUISound, sizeof(SystemSoundID), &mysound, sizeof(AudioServicesPropertyID), &flag);
 	
 	
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+	[[self navigationController] setNavigationBarHidden:YES animated:NO];
+	[super viewDidAppear:animated];
+}
+
 
 - (IBAction)click:(id)sender;
 {
@@ -121,9 +127,7 @@
 
 
 
-- (void) animateToy:(int)numTimes {
-	NSLog(@"beginning in animate toy ------------ numtimes: %d", numTimes);
-	
+-(void)animateToy:(int)numTimes {	
 	int alternator = lastState;
 	
 	NSMutableArray *animationArray = [[NSMutableArray alloc] init] ;
@@ -141,13 +145,13 @@
 	}
 	lastState = alternator;
 
-	ClosedImageView.animationImages = nil; // for good measure, clear it out before assigning
-	ClosedImageView.animationImages = animationArray; 
-	ClosedImageView.animationDuration = 2.0;// seconds	
-	ClosedImageView.animationRepeatCount = 1;
+	closedImageView.animationImages = nil; // for good measure, clear it out before assigning
+	closedImageView.animationImages = animationArray; 
+	closedImageView.animationDuration = 2.0;// seconds	
+	closedImageView.animationRepeatCount = 1;
 	
-	[ClosedImageView startAnimating]; 	
-	[ClosedImageView setImage:[masterImageArray objectAtIndex:lastState]];
+	[closedImageView startAnimating]; 	
+	[closedImageView setImage:[masterImageArray objectAtIndex:lastState]];
 
 	stage ++; 
 	
@@ -157,51 +161,44 @@
 
 - (void)revealFortune:(int)fortuneID{
 	fortuneID --; // indexes start at 0 not 1
-	NSLog(@"the fortune count: %d and retain count %d",[fortuneArray count], [fortuneArray retainCount]);
 	NSObject *selectedObj = [fortuneArray objectAtIndex:fortuneID] ;
 	NSString *fortuneString = [selectedObj valueForKey:@"FortuneString"];
-	FortuneLabel.text = fortuneString;
+	fortuneLabel.text = fortuneString;
 
-
-	NSLog(@"%@ the fortunestring, fortuneID (-1), %d", fortuneString, fortuneID);
-	
 	//clean out closedimagearray	 
-	[ClosedImageView setImage:[masterImageArray objectAtIndex:2]];
+	[closedImageView setImage:[masterImageArray objectAtIndex:2]];
 	
-	ClosedImageView.hidden = YES;
-	YellowButton.hidden = YES;
-	BlueButton.hidden = YES;
-	RedButton.hidden = YES;
-	GreenButton.hidden = YES;
+	closedImageView.hidden = YES;
+	yellowButton.hidden = YES;
+	blueButton.hidden = YES;
+	redButton.hidden = YES;
+	greenButton.hidden = YES;
 	
 	craftyButton.hidden = NO;
-	AgainButton.hidden = NO;	
-	FortuneLabel.hidden = NO;
+	againButton.hidden = NO;	
+	fortuneLabel.hidden = NO;
 	
 }
 
 
 - (IBAction) playAgain {
-	NSLog(@"in playAgain");
-	ClosedImageView.animationImages = nil;
-	[ClosedImageView setImage:[masterImageArray objectAtIndex:2]];
+	closedImageView.animationImages = nil;
+	[closedImageView setImage:[masterImageArray objectAtIndex:2]];
 	
-	FortuneLabel.hidden = YES;
-	AgainButton.hidden = YES;
+	fortuneLabel.hidden = YES;
+	againButton.hidden = YES;
 	craftyButton.hidden = YES;
 	
-	ClosedImageView.hidden = NO;
-	RedButton.hidden = NO;
-	BlueButton.hidden = NO;
-	GreenButton.hidden = NO;
-	YellowButton.hidden = NO;
+	closedImageView.hidden = NO;
+	redButton.hidden = NO;
+	blueButton.hidden = NO;
+	greenButton.hidden = NO;
+	yellowButton.hidden = NO;
 	
 	// reset game state vars
 	stage = 0;
 	lastState = 0;
 	
-//	NSLog(@"play again");
-//	NSLog(@"retaincount for civ.anim %d", [ClosedImageView.animationImages retainCount]);
 }
 
 
@@ -242,19 +239,16 @@
 	
 	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
 	self.fetchedResultsController = aFetchedResultsController;
-	
-	NSLog(@"the retain count of aFetchedResultsController: %d", [aFetchedResultsController retainCount]);
-	
+		
 	[aFetchedResultsController release];
 	[fetchRequest release];
 	[sortDescriptor release];
 	[sortDescriptors release];
-	NSLog(@"the retain count of aFetchedResultsController after first release: %d", [aFetchedResultsController retainCount]);
 
 	return fetchedResultsController;
 }    
 
-#pragma mark built-in methods
+#pragma mark memory management
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -262,24 +256,39 @@
 	
 }
 
+-(IBAction)viewInfoAlert{
+	infoAlert = [[[UIAlertView alloc] initWithTitle:@"CootieCatcher" message:@"By Anna Billstrom, with some help from her big sister Jennifer Huber.\n \n\n\n" delegate:self cancelButtonTitle:nil otherButtonTitles: nil] autorelease];
+    [infoAlert show];
+	UIImageView *jmeIv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"me_jenny.png"]];
+	jmeIv.center = CGPointMake((infoAlert.bounds.size.width/2), (infoAlert.bounds.size.height-65));
+	[infoAlert addSubview:jmeIv];
+	[jmeIv release];
+		
+	[self performSelector:@selector(performDismiss) withObject:nil afterDelay:10.0f];
+}
+
+-(void) performDismiss{
+	[infoAlert dismissWithClickedButtonIndex:0 animated:NO];
+}
 
 - (void)viewDidUnload {
-	[ClosedImageView release];
+	[closedImageView release];
 	[fortuneArray release];
 }
 
 
 - (void)dealloc {
-	[BlueButton release];
-	[YellowButton release];
-	[RedButton release];
-	[GreenButton release];
-	[AgainButton release];
+	[blueButton release];
+	[yellowButton release];
+	[redButton release];
+	[greenButton release];
+	[againButton release];
 	[craftyButton release];
+	[infoAlert release];
 	
-	[FortuneLabel release];
+	[fortuneLabel release];
 	
-	[ClosedImageView release];
+	[closedImageView release];
 
 	[fortuneArray release];
 	[colors release];

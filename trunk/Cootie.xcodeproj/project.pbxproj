@@ -27,6 +27,7 @@
 		957A93021159BB1F006760A3 /* FortuneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957A93001159BB1F006760A3 /* FortuneViewController.m */; };
 		957A93031159BB1F006760A3 /* FortuneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 957A93011159BB1F006760A3 /* FortuneViewController.xib */; };
 		9588982E115BF5B60008AB8D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9588982D115BF5B60008AB8D /* DetailViewController.xib */; };
+		95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E2A6D4119A66B2004E0D4D /* me_jenny.png */; };
 		95EF5F83115A9A93009A01A2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5F81115A9A93009A01A2 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		957A93001159BB1F006760A3 /* FortuneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FortuneViewController.m; sourceTree = "<group>"; };
 		957A93011159BB1F006760A3 /* FortuneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FortuneViewController.xib; path = Classes/FortuneViewController.xib; sourceTree = "<group>"; };
 		9588982D115BF5B60008AB8D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailViewController.xib; path = Classes/DetailViewController.xib; sourceTree = "<group>"; };
+		95E2A6D4119A66B2004E0D4D /* me_jenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_jenny.png; sourceTree = "<group>"; };
 		95EF5F80115A9A93009A01A2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		95EF5F81115A9A93009A01A2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources-iPhone */,
+				957A93011159BB1F006760A3 /* FortuneViewController.xib */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				9512086A115952D80009A649 /* Cootie2-Info.plist */,
@@ -128,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9517278711880178003120ED /* cootie.wav */,
+				95E2A6D4119A66B2004E0D4D /* me_jenny.png */,
 				955399D51176744A00ED696E /* Icon.png */,
 				956AAA351173D52200FA95C9 /* Fortune.h */,
 				956AAA361173D52200FA95C9 /* Fortune.m */,
@@ -135,7 +139,6 @@
 				9546DA1311728A110098EEA7 /* tall.png */,
 				9546DA1111728A050098EEA7 /* wide.png */,
 				9588982D115BF5B60008AB8D /* DetailViewController.xib */,
-				957A93011159BB1F006760A3 /* FortuneViewController.xib */,
 				95426306114D92CB00AA5D28 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Cootie-Info.plist */,
@@ -181,6 +184,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = banane.com;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cootie" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
@@ -214,6 +220,7 @@
 				9546DA1611728A190098EEA7 /* closed.png in Resources */,
 				955399D61176744A00ED696E /* Icon.png in Resources */,
 				9517278811880178003120ED /* cootie.wav in Resources */,
+				95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +288,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.1.2;
 			};
 			name = Release;

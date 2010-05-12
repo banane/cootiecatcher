@@ -28,8 +28,7 @@
 
 
 -(IBAction)saveClicked:(id)sender{
-	tmpFortune = [fortuneTextField text];
-	[selectedObject setValue:tmpFortune forKey:@"FortuneString"];
+	[selectedObject setValue:[fortuneTextField text] forKey:@"FortuneString"];
 	
 }
 -(IBAction)clearClicked:(id)sender{
