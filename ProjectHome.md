@@ -1,0 +1,1 @@
+This is a project to provide a curriculum piece for kids/girls to learn how to program, using game design. This initial game is a simple fortune-teller game.
