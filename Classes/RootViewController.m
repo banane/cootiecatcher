@@ -230,7 +230,6 @@
     [jmeIv setContentMode:UIViewContentModeCenter];
     CGPoint imageViewCenter = infoAlert.view.center;
 
-//    imageViewCenter.x = CGRectGetMidX(jmeIv.view.frame);
     NSLog(@"get imageviewcenter x: %d", (int)imageViewCenter.x);
     imageViewCenter.y = imageViewCenter.y - 110;
     imageViewCenter.x = imageViewCenter.x - 30;
