@@ -17,7 +17,6 @@
 
 
 -(IBAction)textFieldDidEndEditing:(UITextField *)textField{	
-	//[selectedObject setValue:[textField text] forKey:@"FortuneString"];
 	tmpFortune = [textField text];
 }
 
@@ -26,50 +25,24 @@
 	return NO;
 }
 
-
 -(IBAction)saveClicked:(id)sender{
 	[selectedObject setValue:[fortuneTextField text] forKey:@"FortuneString"];
-	
+    [[self navigationController] popViewControllerAnimated:YES];
 }
+
 -(IBAction)clearClicked:(id)sender{
 	fortuneTextField.text = @"";
-	
 }
 
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	
     [super viewDidLoad];
 	fortuneTextField.delegate = self;
-	
 	self.title=@"Edit Fortune";
-	
 	fortuneTextField.text = [[selectedObject valueForKey:@"FortuneString"] description];
 }
 
  - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
-//	 return (interfaceOrientation == UIInterfaceOrientationPortrait);
 	 return YES;
-}
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-}
-
-
-- (void)dealloc {
-	[selectedObject release];
-	[fortuneTextField release];
-    [super dealloc];
 }
 
 
