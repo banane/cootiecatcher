@@ -81,23 +81,25 @@
 
 - (IBAction)click:(id)sender;
 {
-	
 	int buttonInt = (int *)[sender tag];
 	int flipTimes = 0;
+    
+    NSLog(@"stage: %d", stage);
 	if(stage == 0) {						//color round- the char length of the word
 		flipTimes = (int *)[[colors objectAtIndex:buttonInt] length];
 	} else {								// all other rounds interpret the id to displayed numbers based on state
 		flipTimes = [[[imgNumsArray objectAtIndex:lastState] objectAtIndex:buttonInt] intValue];
 	}  
+    NSLog(@"flip times: %d", flipTimes);
 											// logging, animate for number rounds
 	NSLog(@"play info:stage %d, fliptimes %d, buttonInt %d, lastState %d",stage, flipTimes, buttonInt, lastState);
 
 							// setup final display actions for rounds
 
-	if (stage < 3) {          
+	if (stage < 2) {
 		[self animateToy:flipTimes];        
 		[self playSound];
-	} else if (stage == 3) {
+	} else if (stage == 2) {
 		NSLog(@"in stage is 3");
 		[self revealFortune:flipTimes];
 	}
@@ -114,28 +116,37 @@
 		
 		// flip alternator
 		alternator ^=1;
+        NSLog(@"alternator: %d", alternator);
 		[animationArray addObject:[masterImageArray objectAtIndex:alternator]] ;
 		
 		// store the last state of tall/wide for next stage
-		if (i<numTimes){
+		if (i<numTimes && i != numTimes){
+            NSLog(@"adding closed");
 			[animationArray addObject:[masterImageArray objectAtIndex:2]]; // helps make it the "look" of the cootiecatcher
 		}
 	}
 	lastState = alternator;
+    
+    float duration = 2.0;
 
 	closedImageView.animationImages = nil; // for good measure, clear it out before assigning
 	closedImageView.animationImages = animationArray; 
-	closedImageView.animationDuration = 2.0;// seconds	
+	closedImageView.animationDuration = duration;// seconds
 	closedImageView.animationRepeatCount = 1;
-	
-	[closedImageView startAnimating]; 	
-	[closedImageView setImage:[masterImageArray objectAtIndex:lastState]];
-
-	stage ++; 
-	
-	[animationArray release];
+    
+    [self performSelector:@selector(cootieAnimationStopped) withObject:nil
+               afterDelay:duration];
+    
+	[closedImageView startAnimating];
+    
+	stage ++;
 }
 
+-(void)cootieAnimationStopped {
+    closedImageView.animationImages = nil;
+    [closedImageView setImage:[masterImageArray objectAtIndex:lastState]];
+    
+}
 
 - (void)revealFortune:(int)fortuneID{
 	fortuneID --; // indexes start at 0 not 1
@@ -190,8 +201,6 @@
 	fvc.resetValues = resetValues;
 //	NSLog(@"in rvc: resetValues: %@", resetValues);
 	[[self navigationController] pushViewController:fvc animated: YES];
-	[fvc autorelease];
-	
 }
 
 #pragma mark core data methods
