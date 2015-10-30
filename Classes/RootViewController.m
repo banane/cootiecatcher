@@ -16,14 +16,7 @@
 
 @synthesize blueButton, yellowButton, redButton, greenButton, againButton, craftyButton, fortuneLabel, stage, lastState, closedImageView;
 
-@synthesize managedObjectContext, fetchedResultsController, fortuneArray;
-@synthesize colors;
-@synthesize imgNumsArray;
-@synthesize masterImageArray;
-@synthesize mysound;
-@synthesize resetValues;
-@synthesize infoAlert;
-
+@synthesize managedObjectContext, fetchedResultsController, fortuneArray, colors, imgNumsArray, masterImageArray, mysound, resetValues;
 - (void)viewDidLoad {
 	// setup the static arrays for game play
     
@@ -78,8 +71,6 @@
     AudioServicesCreateSystemSoundID(baseURL, &mysound);
 	AudioServicesPropertyID flag = 0; 
 	AudioServicesSetProperty(kAudioServicesPropertyIsUISound, sizeof(SystemSoundID), &mysound, sizeof(AudioServicesPropertyID), &flag);
-	
-	
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -91,10 +82,10 @@
 - (IBAction)click:(id)sender;
 {
 	
-	int buttonInt = [sender tag];
+	int buttonInt = (int *)[sender tag];
 	int flipTimes = 0;
 	if(stage == 0) {						//color round- the char length of the word
-		flipTimes = [[colors objectAtIndex:buttonInt] length];
+		flipTimes = (int *)[[colors objectAtIndex:buttonInt] length];
 	} else {								// all other rounds interpret the id to displayed numbers based on state
 		flipTimes = [[[imgNumsArray objectAtIndex:lastState] objectAtIndex:buttonInt] intValue];
 	}  
@@ -197,7 +188,7 @@
 - (IBAction)clickFortune: (id)sender{
 	FortuneViewController *fvc = [[FortuneViewController alloc] initWithStyle:UITableViewStylePlain];	
 	fvc.resetValues = resetValues;
-	NSLog(@"in rvc: resetValues: %@", resetValues);
+//	NSLog(@"in rvc: resetValues: %@", resetValues);
 	[[self navigationController] pushViewController:fvc animated: YES];
 	[fvc autorelease];
 	
@@ -231,28 +222,26 @@
 	return fetchedResultsController;
 }    
 
-#pragma mark memory management
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-}
 
 -(IBAction)viewInfoAlert{
-	infoAlert = [[[UIAlertView alloc] initWithTitle:@"CootieCatcher" message:@"By Anna Billstrom, with some help from her big sister Jennifer Huber.\n \n\n\n" delegate:self cancelButtonTitle:nil otherButtonTitles: nil] autorelease];
-    [infoAlert show];
+	UIAlertController* infoAlert = [UIAlertController alertControllerWithTitle:@"CootieCatcher" message:@"By Anna Billstrom, with some help from her big sister Jennifer Huber.\n \n\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
+   
 	UIImageView *jmeIv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"me_jenny.png"]];
-	jmeIv.center = CGPointMake((infoAlert.bounds.size.width/2), (infoAlert.bounds.size.height-65));
-	[infoAlert addSubview:jmeIv];
-	[jmeIv release];
+    [jmeIv setContentMode:UIViewContentModeCenter];
+    CGPoint imageViewCenter = infoAlert.view.center;
+
+//    imageViewCenter.x = CGRectGetMidX(jmeIv.view.frame);
+    NSLog(@"get imageviewcenter x: %d", (int)imageViewCenter.x);
+    imageViewCenter.y = imageViewCenter.y - 110;
+    imageViewCenter.x = imageViewCenter.x - 30;
+    [jmeIv setCenter:imageViewCenter];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cool" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"clicked ok in alert");
+    }];
+    [infoAlert.view addSubview:jmeIv];
+    [infoAlert addAction:action];
+    [self presentViewController:infoAlert animated:YES completion:nil];
 		
-	[self performSelector:@selector(performDismiss) withObject:nil afterDelay:10.0f];
 }
-
--(void) performDismiss{
-	[infoAlert dismissWithClickedButtonIndex:0 animated:NO];
-}
-
 
 @end

@@ -36,7 +36,6 @@
 	NSArray *resetValues;
 	NSArray *masterImageArray;
 	NSMutableArray *fortuneArray;
-	UIAlertView *infoAlert;
 
 }
 
@@ -64,7 +63,6 @@
 @property (nonatomic, retain) NSArray *masterImageArray;
 @property (nonatomic, retain) NSArray *colors;
 @property (nonatomic, retain) NSArray *resetValues;
-@property (nonatomic, retain) UIAlertView *infoAlert;
 
 - (IBAction)click:(id)sender;
 - (IBAction)playAgain;
