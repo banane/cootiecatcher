@@ -8,29 +8,15 @@
 
 #import "RootViewController.h"
 #import "FortuneViewController.h"
-#import "CootieAppDelegate.h"
+#import "AppDelegate.h"
 #import "Fortune.h"
 
 
 @implementation RootViewController
 
-@synthesize blueButton;
-@synthesize yellowButton;
-@synthesize redButton;
-@synthesize greenButton;
-@synthesize againButton;
-@synthesize craftyButton;
+@synthesize blueButton, yellowButton, redButton, greenButton, againButton, craftyButton, fortuneLabel, stage, lastState, closedImageView;
 
-@synthesize fortuneLabel;
-
-@synthesize stage;
-@synthesize lastState;
-
-@synthesize closedImageView;
-
-@synthesize managedObjectContext;
-@synthesize fetchedResultsController;
-@synthesize fortuneArray;
+@synthesize managedObjectContext, fetchedResultsController, fortuneArray;
 @synthesize colors;
 @synthesize imgNumsArray;
 @synthesize masterImageArray;
@@ -40,9 +26,10 @@
 
 - (void)viewDidLoad {
 	// setup the static arrays for game play
+    
 	[[self navigationController] setNavigationBarHidden:YES animated:NO];
 	
-	CootieAppDelegate *appDelegate = (CootieAppDelegate *)[[UIApplication sharedApplication] delegate];
+	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	self.managedObjectContext = appDelegate.managedObjectContext;
 	self.resetValues = appDelegate.resetValues;
 
@@ -54,7 +41,7 @@
 	
 	/* static arrays */
 	
-	colors = [[[NSArray alloc] initWithObjects: @"red", @"green",@"blue", @"yellow", nil] retain];
+	colors = [[NSArray alloc] initWithObjects: @"red", @"green",@"blue", @"yellow", nil];
 
 
 	imgNumsArray = [[NSArray alloc] initWithObjects:[[NSArray alloc] initWithObjects:
@@ -77,9 +64,9 @@
     [fetchRequest setEntity:entity];
 	[fetchRequest setReturnsObjectsAsFaults:NO];
 		
-	fortuneArray = [[context executeFetchRequest:fetchRequest error:&error] retain] ;
+	NSArray *tmpArray = [context executeFetchRequest:fetchRequest error:&error] ;
+    fortuneArray = [[NSMutableArray alloc] initWithArray:tmpArray];
 
-	//[entity release];
 	[error release];
     [fetchRequest release];
 
@@ -240,11 +227,7 @@
 	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
 	self.fetchedResultsController = aFetchedResultsController;
 		
-	[aFetchedResultsController release];
-	[fetchRequest release];
-	[sortDescriptor release];
-	[sortDescriptors release];
-
+	
 	return fetchedResultsController;
 }    
 
@@ -269,33 +252,6 @@
 
 -(void) performDismiss{
 	[infoAlert dismissWithClickedButtonIndex:0 animated:NO];
-}
-
-- (void)viewDidUnload {
-	[closedImageView release];
-	[fortuneArray release];
-}
-
-
-- (void)dealloc {
-	[blueButton release];
-	[yellowButton release];
-	[redButton release];
-	[greenButton release];
-	[againButton release];
-	[craftyButton release];
-	[infoAlert release];
-	
-	[fortuneLabel release];
-	
-	[closedImageView release];
-
-	[fortuneArray release];
-	[colors release];
-	[imgNumsArray release];
-	[masterImageArray release];
-	
-    [super dealloc];
 }
 
 

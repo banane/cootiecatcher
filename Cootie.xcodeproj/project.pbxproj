@@ -3,17 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* CootieAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CootieAppDelegate.m */; };
+		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28860BE40F44EE6400985440 /* CoreData.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		9517278811880178003120ED /* cootie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9517278711880178003120ED /* cootie.wav */; };
 		9538F58C1178446300C37A88 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9538F58B1178446300C37A88 /* AudioToolbox.framework */; };
 		95426307114D92CB00AA5D28 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95426305114D92CB00AA5D28 /* RootViewController.m */; };
@@ -29,18 +28,19 @@
 		9588982E115BF5B60008AB8D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9588982D115BF5B60008AB8D /* DetailViewController.xib */; };
 		95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E2A6D4119A66B2004E0D4D /* me_jenny.png */; };
 		95EF5F83115A9A93009A01A2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5F81115A9A93009A01A2 /* DetailViewController.m */; };
+		FCA520491BE2D00C0039E557 /* UserVoiceSDK-3.0.0 in Resources */ = {isa = PBXBuildFile; fileRef = FCA520481BE2D00C0039E557 /* UserVoiceSDK-3.0.0 */; settings = {ASSET_TAGS = (); }; };
+		FCA5204B1BE2D01A0039E557 /* libUserVoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA5204A1BE2D01A0039E557 /* libUserVoice.a */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* CootieAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CootieAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* CootieAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CootieAppDelegate.m; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Cootie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cootie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28860BE40F44EE6400985440 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* Cootie_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cootie_Prefix.pch; sourceTree = "<group>"; };
-		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Cootie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cootie-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		9512086A115952D80009A649 /* Cootie2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cootie2-Info.plist"; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		95E2A6D4119A66B2004E0D4D /* me_jenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_jenny.png; sourceTree = "<group>"; };
 		95EF5F80115A9A93009A01A2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		95EF5F81115A9A93009A01A2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FCA520481BE2D00C0039E557 /* UserVoiceSDK-3.0.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "UserVoiceSDK-3.0.0"; sourceTree = "<group>"; };
+		FCA5204A1BE2D01A0039E557 /* libUserVoice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUserVoice.a; path = "UserVoiceSDK-3.0.0/libUserVoice.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				FCA5204B1BE2D01A0039E557 /* libUserVoice.a in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */,
@@ -84,8 +87,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623240D0F684500981E51 /* CootieAppDelegate.h */,
-				1D3623250D0F684500981E51 /* CootieAppDelegate.m */,
+				1D3623240D0F684500981E51 /* AppDelegate.h */,
+				1D3623250D0F684500981E51 /* AppDelegate.m */,
 				95426304114D92CB00AA5D28 /* RootViewController.h */,
 				95426305114D92CB00AA5D28 /* RootViewController.m */,
 				957A92FF1159BB1F006760A3 /* FortuneViewController.h */,
@@ -107,10 +110,11 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FCA520481BE2D00C0039E557 /* UserVoiceSDK-3.0.0 */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources-iPhone */,
-				957A93011159BB1F006760A3 /* FortuneViewController.xib */,
+				FCD4AC201BE3D94700E34A85 /* Views */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				9512086A115952D80009A649 /* Cootie2-Info.plist */,
@@ -138,9 +142,6 @@
 				9546DA1511728A190098EEA7 /* closed.png */,
 				9546DA1311728A110098EEA7 /* tall.png */,
 				9546DA1111728A050098EEA7 /* wide.png */,
-				9588982D115BF5B60008AB8D /* DetailViewController.xib */,
-				95426306114D92CB00AA5D28 /* RootViewController.xib */,
-				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Cootie-Info.plist */,
 				956AAA2F1173D4E500FA95C9 /* Fortune.xcdatamodel */,
 			);
@@ -150,6 +151,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCA5204A1BE2D01A0039E557 /* libUserVoice.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -157,6 +159,16 @@
 				9538F58B1178446300C37A88 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCD4AC201BE3D94700E34A85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9588982D115BF5B60008AB8D /* DetailViewController.xib */,
+				95426306114D92CB00AA5D28 /* RootViewController.xib */,
+				957A93011159BB1F006760A3 /* FortuneViewController.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,10 +197,12 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = banane.com;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cootie" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -211,7 +225,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				95426308114D92CB00AA5D28 /* RootViewController.xib in Resources */,
 				957A93031159BB1F006760A3 /* FortuneViewController.xib in Resources */,
 				9588982E115BF5B60008AB8D /* DetailViewController.xib in Resources */,
@@ -219,6 +232,7 @@
 				9546DA1411728A110098EEA7 /* tall.png in Resources */,
 				9546DA1611728A190098EEA7 /* closed.png in Resources */,
 				955399D61176744A00ED696E /* Icon.png in Resources */,
+				FCA520491BE2D00C0039E557 /* UserVoiceSDK-3.0.0 in Resources */,
 				9517278811880178003120ED /* cootie.wav in Resources */,
 				95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */,
 			);
@@ -232,7 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* CootieAppDelegate.m in Sources */,
+				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				95426307114D92CB00AA5D28 /* RootViewController.m in Sources */,
 				957A93021159BB1F006760A3 /* FortuneViewController.m in Sources */,
 				95EF5F83115A9A93009A01A2 /* DetailViewController.m in Sources */,
@@ -254,6 +268,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Cootie_Prefix.pch;
 				INFOPLIST_FILE = "Cootie-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UserVoiceSDK-3.0.0",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = 953GJE7N3Z;
 				PRODUCT_NAME = Cootie;
 			};
 			name = Debug;
@@ -266,6 +285,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Cootie_Prefix.pch;
 				INFOPLIST_FILE = "Cootie-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UserVoiceSDK-3.0.0",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = 953GJE7N3Z;
 				PRODUCT_NAME = Cootie;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -274,27 +298,27 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.2;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.1.2;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

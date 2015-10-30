@@ -6,7 +6,7 @@
 //  Copyright 2010 Anna Billstrom (banane.com) All Rights Reserved
 
 #import "FortuneViewController.h"
-#import "CootieAppDelegate.h"
+#import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "Fortune.h"
 
@@ -20,20 +20,21 @@
 
 - (void)reset {
 	
-	
-	UIAlertView *charAlert = [[UIAlertView alloc]
-							  initWithTitle:@"Reset Fortunes"
-							  message:@"Go back to factory settings. You will lose all typed in fortunes."
-							  delegate:nil
-							  cancelButtonTitle:@"Cancel"
-							  otherButtonTitles:nil];
-	
-	[charAlert addButtonWithTitle:@"Reset"];
-	charAlert.delegate = self;
-	
-	
-	[charAlert show];
-	[charAlert autorelease];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Reset Fortunes"
+                                                                   message:@"Go back to preset fortunes. You will lose all of your typed in fortunes."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self resetValues];
+                                                          }];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+        // do nothing
+    }];
+    
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
 	
 }
 
@@ -45,7 +46,7 @@
     [super viewDidLoad];
 	NSLog(@"inside fvc");
 
-	CootieAppDelegate *appDelegate = (CootieAppDelegate *)[[UIApplication sharedApplication] delegate];
+	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	self.managedObjectContext = appDelegate.managedObjectContext;
 	
 	self.title = @"Fortunes";
@@ -60,41 +61,29 @@
 	
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-	if(buttonIndex == 1){		
-		// delete all fortunes
-
-		
-		NSFetchRequest *fRequest = [[[NSFetchRequest alloc] init] autorelease];
-		[fRequest setEntity:[NSEntityDescription entityForName:@"Fortune" inManagedObjectContext:managedObjectContext]];
-		
-		NSError *error = nil;
-		NSArray *oldForts = [[managedObjectContext executeFetchRequest:fRequest error:&error] retain] ;
-
-		for (NSManagedObject * fort in oldForts) {
-			[managedObjectContext deleteObject:fort];
-		}
-	
-		int i=0;
-		for(NSString *f_str in resetValues){
-			NSManagedObject *newFortune = [NSEntityDescription insertNewObjectForEntityForName:@"Fortune" inManagedObjectContext:managedObjectContext];
-			[newFortune setValue:f_str forKey:@"FortuneString"];
-			[newFortune setValue:[NSNumber numberWithInt:i] forKey:@"FortunePosition"];
-
-			if (![managedObjectContext save:&error]) {
-				NSLog(@"Error adding Fortune - error:%@",error);
-			}
-			i++;
-		}
-		[oldForts release];
-	}
+- (void)resetFortunesOK{
+    NSFetchRequest *fRequest = [[NSFetchRequest alloc] init];
+    [fRequest setEntity:[NSEntityDescription entityForName:@"Fortune" inManagedObjectContext:managedObjectContext]];
+    
+    NSError *error = nil;
+    NSArray *oldForts = [[managedObjectContext executeFetchRequest:fRequest error:&error] retain] ;
+    
+    for (NSManagedObject * fort in oldForts) {
+        [managedObjectContext deleteObject:fort];
+    }
+    
+    int i=0;
+    for(NSString *f_str in resetValues){
+        NSManagedObject *newFortune = [NSEntityDescription insertNewObjectForEntityForName:@"Fortune" inManagedObjectContext:managedObjectContext];
+        [newFortune setValue:f_str forKey:@"FortuneString"];
+        [newFortune setValue:[NSNumber numberWithInt:i] forKey:@"FortunePosition"];
+        
+        if (![managedObjectContext save:&error]) {
+            NSLog(@"Error adding Fortune - error:%@",error);
+        }
+        i++;
+    }
 }
-
-
-- (void)viewDidUnload {
-}
-
-
 
 #pragma mark -
 #pragma mark Table view methods
@@ -117,7 +106,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
     }
     
 	// Configure the cell.
@@ -135,7 +124,7 @@
 	
 	dvc.selectedObject = selectedObject;
 	[self.navigationController pushViewController:dvc animated:YES];
-	[dvc release];
+
 }
 
 
@@ -162,8 +151,7 @@
 			NSLog(@"Unresolved error in commiteditingstyle %@, %@", error, [error userInfo]);
 			abort();
 		}
-		[error release];
-		[context release];
+		
 	}   
 }
 
@@ -206,10 +194,6 @@
     aFetchedResultsController.delegate = self;
 	self.fetchedResultsController = aFetchedResultsController;
 
-	[aFetchedResultsController release];
-	[fetchRequest release];
-	[sortDescriptor release];
-	[sortDescriptors release];
 	
 	NSLog(@"inside fvcs frc retaincount: %d", [aFetchedResultsController retainCount]);
 
@@ -229,13 +213,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 	// Relinquish ownership of any cached data, images, etc that aren't in use.
-}
-
-
-- (void)dealloc {
-	[fetchedResultsController release];
-	[managedObjectContext release];
-    [super dealloc];
 }
 
 
