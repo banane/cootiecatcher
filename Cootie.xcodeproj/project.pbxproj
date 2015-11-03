@@ -29,6 +29,7 @@
 		95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E2A6D4119A66B2004E0D4D /* me_jenny.png */; };
 		95EF5F83115A9A93009A01A2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5F81115A9A93009A01A2 /* DetailViewController.m */; };
 		983C66E66DB53D7CF6F34AF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 468C9FD97C3D4C42EC9FAC3D /* libPods.a */; };
+		FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */; settings = {ASSET_TAGS = (); }; };
 		FCD292C41BE7E60200F5BDDC /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD292C21BE7E60200F5BDDC /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
 		FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -67,6 +68,8 @@
 		95EF5F80115A9A93009A01A2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		95EF5F81115A9A93009A01A2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E9B9BEC135829CFD74B45F60 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalterTurncoat.ttf; sourceTree = "<group>"; };
+		FCB9241C1BE95714006EB199 /* UIButton+Cootie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Cootie.h"; sourceTree = "<group>"; };
 		FCD292C11BE7E60200F5BDDC /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		FCD292C21BE7E60200F5BDDC /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = Classes/MenuViewController.xib; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 				95EF5F81115A9A93009A01A2 /* DetailViewController.m */,
 				FCD292C11BE7E60200F5BDDC /* MenuViewController.h */,
 				FCD292C21BE7E60200F5BDDC /* MenuViewController.m */,
+				FCB9241C1BE95714006EB199 /* UIButton+Cootie.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -150,6 +154,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources-iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */,
 				9517278711880178003120ED /* cootie.wav */,
 				95E2A6D4119A66B2004E0D4D /* me_jenny.png */,
 				955399D51176744A00ED696E /* Icon.png */,
@@ -255,6 +260,7 @@
 				FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */,
 				9517278811880178003120ED /* cootie.wav in Resources */,
 				95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */,
+				FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

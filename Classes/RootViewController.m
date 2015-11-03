@@ -10,11 +10,12 @@
 #import "MenuViewController.h"
 #import "AppDelegate.h"
 #import "Fortune.h"
+#import "UIButton+Cootie.h"
 
 
 @implementation RootViewController
 
-@synthesize blueButton, yellowButton, redButton, greenButton, againButton, fortuneLabel, stage, lastState, closedImageView;
+@synthesize blueButton, yellowButton, redButton, greenButton, againBtn, settingsBtn, fortuneLabel, stage, lastState, closedImageView;
 
 @synthesize managedObjectContext, fetchedResultsController, fortuneArray, colors, imgNumsArray, masterImageArray, mysound;
 - (void)viewDidLoad {
@@ -70,6 +71,9 @@
     AudioServicesCreateSystemSoundID(baseURL, &mysound);
 	AudioServicesPropertyID flag = 0; 
 	AudioServicesSetProperty(kAudioServicesPropertyIsUISound, sizeof(SystemSoundID), &mysound, sizeof(AudioServicesPropertyID), &flag);
+    
+    [settingsBtn makeCootie];
+    [againBtn makeCootie];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -162,7 +166,7 @@
 	redButton.hidden = YES;
 	greenButton.hidden = YES;
 	
-	againButton.hidden = NO;
+	againBtn.hidden = NO;
 	fortuneLabel.hidden = NO;
 	
 }
@@ -173,7 +177,7 @@
 	[closedImageView setImage:[masterImageArray objectAtIndex:2]];
 	
 	fortuneLabel.hidden = YES;
-	againButton.hidden = YES;
+	againBtn.hidden = YES;
 	
 	closedImageView.hidden = NO;
 	redButton.hidden = NO;

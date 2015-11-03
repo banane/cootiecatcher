@@ -13,6 +13,7 @@
 	NSManagedObject	*selectedObject;
 	IBOutlet UITextField *fortuneTextField;
 	IBOutlet UIButton  *saveButton;
+    IBOutlet UIButton *clearBtn;
 	NSString *tmpFortune;
 	
 }
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) NSManagedObject *selectedObject;
 @property (nonatomic, retain) UITextField *fortuneTextField;
 @property (nonatomic, retain) UIButton *saveButton;
+@property (nonatomic, strong) UIButton *clearBtn;
 @property (nonatomic, retain) NSString *tmpFortune;
 
 

@@ -39,9 +39,11 @@
 								  @"You will make an amazing pie.",
 								  @"You wish will come true.",
 								  nil ] ;
-	
+	[self.window setTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
 
 	[self checkData];
+    [self setNavigationBarLook];
 	return YES;
 }
 
@@ -127,6 +129,17 @@
     }    
 	
     return persistentStoreCoordinator;
+}
+
+-(void)setNavigationBarLook{
+    NSShadow* shadow = [NSShadow new];
+    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    shadow.shadowColor = [UIColor grayColor];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor blackColor],
+                                                            NSFontAttributeName: [UIFont fontWithName:@"WalterTurncoat" size:18.0f],
+                                                            NSShadowAttributeName: shadow
+                                                            }];
 }
 
 

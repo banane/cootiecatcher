@@ -7,12 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController">
             <connections>
-                <outlet property="againButton" destination="14" id="39"/>
+                <outlet property="againBtn" destination="14" id="lZV-JX-BC7"/>
                 <outlet property="blueButton" destination="8" id="40"/>
                 <outlet property="closedImageView" destination="4" id="42"/>
                 <outlet property="fortuneLabel" destination="5" id="43"/>
                 <outlet property="greenButton" destination="7" id="45"/>
                 <outlet property="redButton" destination="6" id="47"/>
+                <outlet property="settingsBtn" destination="N0x-gB-BLy" id="WBl-u2-YpP"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="yellowButton" destination="9" id="48"/>
             </connections>
@@ -103,7 +104,7 @@
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="14" userLabel="againButton">
                     <rect key="frame" x="8" y="403" width="191" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
                     <state key="normal" title="Again">
@@ -116,7 +117,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N0x-gB-BLy" userLabel="saveButton">
                     <rect key="frame" x="228" y="403" width="72" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                     <state key="normal" title="Settings">

@@ -16,7 +16,9 @@
 	IBOutlet UIButton *yellowButton;
 	IBOutlet UIButton *redButton;
 	IBOutlet UIButton *greenButton;
-	IBOutlet UIButton *againButton;
+    
+    IBOutlet UIButton *settingsBtn;
+    IBOutlet UIButton *againBtn;
 	
 	IBOutlet UILabel *fortuneLabel;
 		
@@ -41,7 +43,8 @@
 @property (nonatomic, retain) IBOutlet UIButton *yellowButton;
 @property (nonatomic, retain) IBOutlet UIButton *redButton;
 @property (nonatomic, retain) IBOutlet UIButton *greenButton;
-@property (nonatomic, retain) IBOutlet UIButton *againButton;
+@property (nonatomic, retain) IBOutlet UIButton *againBtn;
+@property (nonatomic, retain) IBOutlet UIButton *settingsBtn;
 
 @property (nonatomic, retain) IBOutlet UILabel *fortuneLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *closedImageView;

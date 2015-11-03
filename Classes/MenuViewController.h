@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UIViewController
+@interface MenuViewController : UIViewController <UITableViewDelegate> {
+    UITableView *myTableView;
+    NSArray *tableTitles;
+}
+
+@property (nonatomic, strong) IBOutlet UITableView *myTableView;
+@property NSArray *tableTitles;
 
 
 -(IBAction)clickContactUs:(id)sender;

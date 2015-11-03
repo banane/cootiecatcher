@@ -18,26 +18,6 @@
 @synthesize fetchedResultsController, managedObjectContext;
 
 
-- (void)reset {
-	
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Reset Fortunes"
-                                                                   message:@"Go back to preset fortunes. You will lose all of your typed in fortunes."
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {
-                                                              [self resetValues];
-                                                          }];
-    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
-        // do nothing
-    }];
-    
-    [alert addAction:defaultAction];
-    [alert addAction:cancelAction];
-    [self presentViewController:alert animated:YES completion:nil];
-	
-}
-
 
 - (void)viewDidLoad {
 	
@@ -48,18 +28,38 @@
 
 	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	self.managedObjectContext = appDelegate.managedObjectContext;
-	
 	self.title = @"Fortunes";
-	
 	self.navigationItem.rightBarButtonItem = BARBUTTON(@"Reset", @selector(reset));
 	
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
-		NSLog(@"Unresolved error in rootviewcontroller.h %@, %@", error, [error userInfo]);
 		abort();
 	}
 	
 }
+
+
+- (void)reset {
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Reset Fortunes"
+                                                                   message:@"Go back to preset fortunes. You will lose all of your typed in fortunes."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self resetFortunesOK];
+                                                          }];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+        // do nothing
+    }];
+    
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+
 
 - (void)resetFortunesOK{
     NSFetchRequest *fRequest = [[NSFetchRequest alloc] init];
@@ -113,6 +113,7 @@
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = [[managedObject valueForKey:@"FortuneString"] description];
+    cell.textLabel.font = [UIFont fontWithName:@"WalterTurncoat" size:18.0f];
 	
     return cell;
 }
