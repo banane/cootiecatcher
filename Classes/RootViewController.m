@@ -16,7 +16,7 @@
 
 @synthesize blueButton, yellowButton, redButton, greenButton, againButton, fortuneLabel, stage, lastState, closedImageView;
 
-@synthesize managedObjectContext, fetchedResultsController, fortuneArray, colors, imgNumsArray, masterImageArray, mysound, resetValues;
+@synthesize managedObjectContext, fetchedResultsController, fortuneArray, colors, imgNumsArray, masterImageArray, mysound;
 - (void)viewDidLoad {
 	// setup the static arrays for game play
     
@@ -24,7 +24,6 @@
 	
 	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	self.managedObjectContext = appDelegate.managedObjectContext;
-	self.resetValues = appDelegate.resetValues;
 
 	NSError *error = nil;
 	[[self fetchedResultsController] performFetch:&error];
@@ -197,7 +196,6 @@
 - (IBAction)clickSettings:(id)sender{
     
     MenuViewController *mvc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
-	mvc.resetValues = resetValues;
 	[[self navigationController] pushViewController:mvc animated: YES];
 }
 
@@ -229,25 +227,5 @@
 	return fetchedResultsController;
 }    
 
-
--(IBAction)viewInfoAlert{
-	UIAlertController* infoAlert = [UIAlertController alertControllerWithTitle:@"CootieCatcher" message:@"By Anna Billstrom, with some help from her big sister Jennifer Huber.\n \n\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
-   
-	UIImageView *jmeIv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"me_jenny.png"]];
-    [jmeIv setContentMode:UIViewContentModeCenter];
-    CGPoint imageViewCenter = infoAlert.view.center;
-
-    NSLog(@"get imageviewcenter x: %d", (int)imageViewCenter.x);
-    imageViewCenter.y = imageViewCenter.y - 110;
-    imageViewCenter.x = imageViewCenter.x - 30;
-    [jmeIv setCenter:imageViewCenter];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cool" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"clicked ok in alert");
-    }];
-    [infoAlert.view addSubview:jmeIv];
-    [infoAlert addAction:action];
-    [self presentViewController:infoAlert animated:YES completion:nil];
-		
-}
 
 @end

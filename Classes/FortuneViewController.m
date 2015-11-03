@@ -15,7 +15,7 @@
 
 @implementation FortuneViewController
 
-@synthesize fetchedResultsController, managedObjectContext, resetValues;
+@synthesize fetchedResultsController, managedObjectContext;
 
 
 - (void)reset {
@@ -73,7 +73,8 @@
     }
     
     int i=0;
-    for(NSString *f_str in resetValues){
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    for(NSString *f_str in appDelegate.resetValues){
         NSManagedObject *newFortune = [NSEntityDescription insertNewObjectForEntityForName:@"Fortune" inManagedObjectContext:managedObjectContext];
         [newFortune setValue:f_str forKey:@"FortuneString"];
         [newFortune setValue:[NSNumber numberWithInt:i] forKey:@"FortunePosition"];

@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "FortuneViewController.h"
 #import "UserVoice.h"
 
 @interface MenuViewController ()
@@ -14,7 +15,6 @@
 @end
 
 @implementation MenuViewController
-@synthesize resetValues;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,14 +34,21 @@
 - (IBAction)clickContactUs:(id)sender{
     [UserVoice presentUserVoiceContactUsFormForParentViewController:self];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(IBAction)viewFortunes:(id)sender{
+    FortuneViewController *fvc = [[FortuneViewController alloc] initWithNibName:@"FortuneViewController" bundle:nil];
+    [[self navigationController] pushViewController:fvc animated:YES];
+    
 }
-*/
+
+-(IBAction)viewAbout:(id)sender{
+    UIAlertController* infoAlert = [UIAlertController alertControllerWithTitle:@"CootieCatcher" message:@"By Anna Billstrom, with some help from her big sister Jennifer Huber.\n \n\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
+    
+      UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cool" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"clicked ok in alert");
+    }];
+    [infoAlert addAction:action];
+    [self presentViewController:infoAlert animated:YES completion:nil];
+
+}
 
 @end

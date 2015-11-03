@@ -32,7 +32,6 @@
 
 	NSArray *colors;
 	NSArray *imgNumsArray;
-	NSArray *resetValues;
 	NSArray *masterImageArray;
 	NSMutableArray *fortuneArray;
 
@@ -60,7 +59,6 @@
 @property (nonatomic, retain) NSArray *imgNumsArray;
 @property (nonatomic, retain) NSArray *masterImageArray;
 @property (nonatomic, retain) NSArray *colors;
-@property (nonatomic, retain) NSArray *resetValues;
 
 - (IBAction)click:(id)sender;
 - (IBAction)playAgain;

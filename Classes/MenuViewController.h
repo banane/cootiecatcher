@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UIViewController{
-    NSArray *resetValues;
-}
+@interface MenuViewController : UIViewController
 
-@property (nonatomic, retain) NSArray *resetValues;
 
 -(IBAction)clickContactUs:(id)sender;
 

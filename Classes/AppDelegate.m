@@ -25,14 +25,11 @@
     self.window.rootViewController = navCtrl;
     
     [self.window makeKeyAndVisible];
-    
-   
-    
 
-  /*  rvc.managedObjectContext = context;
+    rvc.managedObjectContext = context;
 
-	// setup application-wide static variable here
-	resetValues = [[[NSArray alloc] initWithObjects:								  
+	// setup application-wide static variable here*/
+	resetValues = [[NSArray alloc] initWithObjects:
 								  @"You will be president.",
 								  @"Giraffes are neat.",
 								  @"Someone will steal your pencil.",
@@ -41,12 +38,10 @@
 								  @"Your secret is safe.",
 								  @"You will make an amazing pie.",
 								  @"You wish will come true.",
-								  nil ] retain];
+								  nil ] ;
 	
-	rvc.resetValues = resetValues;
 
 	[self checkData];
-	*/
 	return YES;
 }
 
@@ -84,7 +79,7 @@
 			}
 		}
 	} else{
-		NSLog(@"fortune count upon app start is: %d",fortunes.count);
+		NSLog(@"fortune count upon app start is: %d",(int)fortunes.count);
 	}
 }
 
