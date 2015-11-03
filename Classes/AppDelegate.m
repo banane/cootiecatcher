@@ -37,7 +37,7 @@
 								  @"Nobody gets you, like I get you.",
 								  @"Your secret is safe.",
 								  @"You will make an amazing pie.",
-								  @"You wish will come true.",
+								  @"Your wish will come true.",
 								  nil ] ;
 	[self.window setTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
