@@ -17,7 +17,6 @@
 	IBOutlet UIButton *redButton;
 	IBOutlet UIButton *greenButton;
 	IBOutlet UIButton *againButton;
-	IBOutlet UIButton *craftyButton;
 	
 	IBOutlet UILabel *fortuneLabel;
 		
@@ -44,7 +43,6 @@
 @property (nonatomic, retain) IBOutlet UIButton *redButton;
 @property (nonatomic, retain) IBOutlet UIButton *greenButton;
 @property (nonatomic, retain) IBOutlet UIButton *againButton;
-@property (nonatomic, retain) IBOutlet UIButton *craftyButton;
 
 @property (nonatomic, retain) IBOutlet UILabel *fortuneLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *closedImageView;
@@ -66,9 +64,8 @@
 
 - (IBAction)click:(id)sender;
 - (IBAction)playAgain;
-- (IBAction)clickFortune:(id)sender;
-- (IBAction)viewInfoAlert;
-- (void) playSound;
+- (IBAction)clickSettings:(id)sender;
+- (void)playSound;
 - (void)animateToy:(int)numTimes;
 - (void)revealFortune:(int)fortuneID;
 

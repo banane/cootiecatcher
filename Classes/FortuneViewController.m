@@ -195,7 +195,7 @@
 	self.fetchedResultsController = aFetchedResultsController;
 
 	
-	NSLog(@"inside fvcs frc retaincount: %d", [aFetchedResultsController retainCount]);
+	NSLog(@"inside fvcs frc retaincount: %d", (int)[aFetchedResultsController retainCount]);
 
 	return fetchedResultsController;
 }    

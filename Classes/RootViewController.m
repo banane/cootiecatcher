@@ -7,14 +7,14 @@
 
 
 #import "RootViewController.h"
-#import "FortuneViewController.h"
+#import "MenuViewController.h"
 #import "AppDelegate.h"
 #import "Fortune.h"
 
 
 @implementation RootViewController
 
-@synthesize blueButton, yellowButton, redButton, greenButton, againButton, craftyButton, fortuneLabel, stage, lastState, closedImageView;
+@synthesize blueButton, yellowButton, redButton, greenButton, againButton, fortuneLabel, stage, lastState, closedImageView;
 
 @synthesize managedObjectContext, fetchedResultsController, fortuneArray, colors, imgNumsArray, masterImageArray, mysound, resetValues;
 - (void)viewDidLoad {
@@ -163,8 +163,7 @@
 	redButton.hidden = YES;
 	greenButton.hidden = YES;
 	
-	craftyButton.hidden = NO;
-	againButton.hidden = NO;	
+	againButton.hidden = NO;
 	fortuneLabel.hidden = NO;
 	
 }
@@ -176,7 +175,6 @@
 	
 	fortuneLabel.hidden = YES;
 	againButton.hidden = YES;
-	craftyButton.hidden = YES;
 	
 	closedImageView.hidden = NO;
 	redButton.hidden = NO;
@@ -196,11 +194,11 @@
 }
 
 
-- (IBAction)clickFortune: (id)sender{
-	FortuneViewController *fvc = [[FortuneViewController alloc] initWithStyle:UITableViewStylePlain];	
-	fvc.resetValues = resetValues;
-//	NSLog(@"in rvc: resetValues: %@", resetValues);
-	[[self navigationController] pushViewController:fvc animated: YES];
+- (IBAction)clickSettings:(id)sender{
+    
+    MenuViewController *mvc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+	mvc.resetValues = resetValues;
+	[[self navigationController] pushViewController:mvc animated: YES];
 }
 
 #pragma mark core data methods
