@@ -29,9 +29,10 @@
 		95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E2A6D4119A66B2004E0D4D /* me_jenny.png */; };
 		95EF5F83115A9A93009A01A2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5F81115A9A93009A01A2 /* DetailViewController.m */; };
 		983C66E66DB53D7CF6F34AF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 468C9FD97C3D4C42EC9FAC3D /* libPods.a */; };
-		FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */; settings = {ASSET_TAGS = (); }; };
-		FCD292C41BE7E60200F5BDDC /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD292C21BE7E60200F5BDDC /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
-		FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		ED417CF21BEB137800704A40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED417CF11BEB137800704A40 /* Images.xcassets */; };
+		FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */; };
+		FCD292C41BE7E60200F5BDDC /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD292C21BE7E60200F5BDDC /* MenuViewController.m */; };
+		FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		95EF5F80115A9A93009A01A2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		95EF5F81115A9A93009A01A2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E9B9BEC135829CFD74B45F60 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		ED417CF11BEB137800704A40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Cootie/Images.xcassets; sourceTree = "<group>"; };
 		FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalterTurncoat.ttf; sourceTree = "<group>"; };
 		FCB9241C1BE95714006EB199 /* UIButton+Cootie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Cootie.h"; sourceTree = "<group>"; };
 		FCD292C11BE7E60200F5BDDC /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				ED417CF11BEB137800704A40 /* Images.xcassets */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				FCD4AC201BE3D94700E34A85 /* Views */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -224,6 +227,11 @@
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = banane.com;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 3PKSYT4R4Q;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Cootie" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -259,6 +267,7 @@
 				955399D61176744A00ED696E /* Icon.png in Resources */,
 				FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */,
 				9517278811880178003120ED /* cootie.wav in Resources */,
+				ED417CF21BEB137800704A40 /* Images.xcassets in Resources */,
 				95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */,
 				FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */,
 			);
@@ -338,7 +347,10 @@
 			baseConfigurationReference = E9B9BEC135829CFD74B45F60 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -354,6 +366,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher;
 				PRODUCT_NAME = Cootie;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -362,7 +375,10 @@
 			baseConfigurationReference = 7326AFF8FC2EDA188114C70D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Cootie_Prefix.pch;
@@ -376,6 +392,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher;
 				PRODUCT_NAME = Cootie;
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

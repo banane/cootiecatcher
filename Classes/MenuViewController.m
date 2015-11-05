@@ -26,7 +26,7 @@
     config.forumId = 328458;
     // [config identifyUserWithEmail:@"email@example.com" name:@"User Name", guid:@"USER_ID");
     [UserVoice initialize:config];
-    tableTitles = [[NSArray alloc] initWithObjects:@"About CootieCatcher", @"Contact Us", @"I've got an idea", @"Fortunes", @"Discuss Cootie!", nil];
+    tableTitles = [[NSArray alloc] initWithObjects:@"Fortunes", @"Contact Us", @"I've got an idea", @"Discuss Cootie!",@"About CootieCatcher", nil];
     UIImageView *jmv = [[UIImageView alloc] init];
     jmv.image = [UIImage imageNamed:@"me_jenny"];
     [myTableView setBackgroundView:jmv];
@@ -79,7 +79,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch(indexPath.row){
         case 0:
-            [self viewAbout:nil];
+             [self viewFortunes:nil];
             break;
         case 1:
             [self clickContactUs:nil];
@@ -88,10 +88,10 @@
             [self clickNewIdea:nil];
             break;
         case 3:
-            [self viewFortunes:nil];
+            [self clickDiscuss:nil];
             break;
         case 4:
-            [self clickDiscuss:nil];
+            [self viewAbout:nil];
             break;
         default:
             break;

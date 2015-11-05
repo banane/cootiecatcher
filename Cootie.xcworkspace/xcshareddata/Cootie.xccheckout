@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>45C58BB5-8572-4759-BDF0-51AE34060825</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Cootie</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1F5B8ACAA13178D0DE9F2F930E7878676CDFC3DD</key>
+		<string>github.com:banane/cootiecatcher.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Cootie.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1F5B8ACAA13178D0DE9F2F930E7878676CDFC3DD</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:banane/cootiecatcher.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1F5B8ACAA13178D0DE9F2F930E7878676CDFC3DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1F5B8ACAA13178D0DE9F2F930E7878676CDFC3DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cootiecatcher_3</string>
+		</dict>
+	</array>
+</dict>
+</plist>

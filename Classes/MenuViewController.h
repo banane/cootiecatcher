@@ -14,7 +14,7 @@
 }
 
 @property (nonatomic, strong) IBOutlet UITableView *myTableView;
-@property NSArray *tableTitles;
+@property (nonatomic, strong) NSArray *tableTitles;
 
 
 -(IBAction)clickContactUs:(id)sender;

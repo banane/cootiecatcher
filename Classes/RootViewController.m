@@ -87,15 +87,15 @@
 	int buttonInt = (int *)[sender tag];
 	int flipTimes = 0;
     
-    NSLog(@"stage: %d", stage);
+//    NSLog(@"stage: %d", stage);
 	if(stage == 0) {						//color round- the char length of the word
 		flipTimes = (int *)[[colors objectAtIndex:buttonInt] length];
 	} else {								// all other rounds interpret the id to displayed numbers based on state
 		flipTimes = [[[imgNumsArray objectAtIndex:lastState] objectAtIndex:buttonInt] intValue];
 	}  
-    NSLog(@"flip times: %d", flipTimes);
+//    NSLog(@"flip times: %d", flipTimes);
 											// logging, animate for number rounds
-	NSLog(@"play info:stage %d, fliptimes %d, buttonInt %d, lastState %d",stage, flipTimes, buttonInt, lastState);
+//	NSLog(@"play info:stage %d, fliptimes %d, buttonInt %d, lastState %d",stage, flipTimes, buttonInt, lastState);
 
 							// setup final display actions for rounds
 
@@ -124,7 +124,6 @@
 		
 		// store the last state of tall/wide for next stage
 		if (i<numTimes && i != numTimes){
-            NSLog(@"adding closed");
 			[animationArray addObject:[masterImageArray objectAtIndex:2]]; // helps make it the "look" of the cootiecatcher
 		}
 	}
