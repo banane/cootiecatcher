@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8376F6F611DD46859510243A'
+               BlueprintIdentifier = '467DE86BD0985ED5B1738E6D'
                BlueprintName = 'uservoice-iphone-sdk-UserVoice'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'UserVoice.bundle'>

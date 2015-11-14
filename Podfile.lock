@@ -1,10 +1,13 @@
 PODS:
+  - Kiwi (2.4.0)
   - uservoice-iphone-sdk (3.2.3)
 
 DEPENDENCIES:
+  - Kiwi
   - uservoice-iphone-sdk (~> 3.2)
 
 SPEC CHECKSUMS:
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   uservoice-iphone-sdk: 349d9ef36d3c43939d28390b9e86bb32b65fe983
 
 COCOAPODS: 0.39.0

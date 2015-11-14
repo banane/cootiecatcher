@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1F5B8ACAA13178D0DE9F2F930E7878676CDFC3DD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1F5B8ACAA13178D0DE9F2F930E7878676CDFC3DD" : 0,
+    "285D543319EEB38B059014F34D43A79D66C1ECDC" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CFA43B6B-F411-47AD-B0FF-6E18BBAFD883",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1F5B8ACAA13178D0DE9F2F930E7878676CDFC3DD" : "cootiecatcher\/",
+    "285D543319EEB38B059014F34D43A79D66C1ECDC" : "..\/ios\/uservoice-ios-sdk"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Cootie",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Cootie.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:banane\/cootiecatcher.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1F5B8ACAA13178D0DE9F2F930E7878676CDFC3DD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:banane\/uservoice-ios-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "285D543319EEB38B059014F34D43A79D66C1ECDC"
+    }
+  ]
+}

@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Kiwi.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CootieTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +37,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4CB3F7F46945EE16A19F86EAB6FC5CAF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>761E649ACC2619FC5CEB726FA1833A1C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C60266DD5F54B6A612F603610F0E2FCF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
