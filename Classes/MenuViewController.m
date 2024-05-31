@@ -8,7 +8,6 @@
 
 #import "MenuViewController.h"
 #import "FortuneViewController.h"
-#import "UserVoice.h"
 
 @interface MenuViewController ()
 
@@ -21,11 +20,6 @@
 - (void)viewDidLoad {
     self.title=@"Menu";
    [[self navigationController] setNavigationBarHidden:NO animated:NO];
-    // Set this up once when your application launches
-    UVConfig *config = [UVConfig configWithSite:@"banane.uservoice.com"];
-    config.forumId = 328458;
-    // [config identifyUserWithEmail:@"email@example.com" name:@"User Name", guid:@"USER_ID");
-    [UserVoice initialize:config];
     tableTitles = [[NSArray alloc] initWithObjects:@"Fortunes", @"Contact Us", @"I've got an idea", @"Discuss Cootie!",@"About CootieCatcher", nil];
     UIImageView *jmv = [[UIImageView alloc] init];
     jmv.image = [UIImage imageNamed:@"me_jenny"];
@@ -105,16 +99,16 @@
 }
 
 - (IBAction)clickContactUs:(id)sender{
-    [UserVoice presentUserVoiceContactUsFormForParentViewController:self];
+//    [UserVoice presentUserVoiceContactUsFormForParentViewController:self];
 }
 
 - (IBAction)clickDiscuss:(id)sender{
-    [UserVoice presentUserVoiceForumForParentViewController:self];
+//    [UserVoice presentUserVoiceForumForParentViewController:self];
 }
 
 
 - (IBAction)clickNewIdea:(id)sender{
-    [UserVoice presentUserVoiceNewIdeaFormForParentViewController:self];
+//    [UserVoice presentUserVoiceNewIdeaFormForParentViewController:self];
 }
 
 -(IBAction)viewFortunes:(id)sender{

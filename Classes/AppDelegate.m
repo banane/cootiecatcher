@@ -8,7 +8,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "FortuneViewController.h"
-#import "UserVoice.h"
+//#import "UserVoice.h"
 
 @implementation AppDelegate
 
