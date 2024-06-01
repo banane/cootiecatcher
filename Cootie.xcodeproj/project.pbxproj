@@ -27,6 +27,8 @@
 		ED417CF21BEB137800704A40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED417CF11BEB137800704A40 /* Images.xcassets */; };
 		FCA279E22C0ADE4000DC4C86 /* Button+Cootie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */; };
 		FCA279E42C0AE68500DC4C86 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279E32C0AE68500DC4C86 /* DetailVC.swift */; };
+		FCA279E62C0AF82000DC4C86 /* FortuneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */; };
+		FCA279E82C0BE0F700DC4C86 /* Fortunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */; };
 		FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */; };
 		FCD292C41BE7E60200F5BDDC /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD292C21BE7E60200F5BDDC /* MenuViewController.m */; };
 		FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */; };
@@ -62,6 +64,9 @@
 		FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Cootie.swift"; sourceTree = "<group>"; };
 		FCA279AA2C0ABFD700DC4C86 /* Cootie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cootie-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCA279E32C0AE68500DC4C86 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneVC.swift; sourceTree = "<group>"; };
+		FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortunes.swift; sourceTree = "<group>"; };
+		FCA279E92C0BE46500DC4C86 /* Fortunes_resetValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fortunes_resetValues.h; sourceTree = "<group>"; };
 		FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalterTurncoat.ttf; sourceTree = "<group>"; };
 		FCD292C11BE7E60200F5BDDC /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		FCD292C21BE7E60200F5BDDC /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -91,12 +96,15 @@
 				FC2709402C0AA24F00BB9010 /* MainController.swift */,
 				95426304114D92CB00AA5D28 /* RootViewController.h */,
 				95426305114D92CB00AA5D28 /* RootViewController.m */,
+				FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */,
 				957A92FF1159BB1F006760A3 /* FortuneViewController.h */,
 				957A93001159BB1F006760A3 /* FortuneViewController.m */,
 				FCA279E32C0AE68500DC4C86 /* DetailVC.swift */,
 				FCD292C11BE7E60200F5BDDC /* MenuViewController.h */,
 				FCD292C21BE7E60200F5BDDC /* MenuViewController.m */,
 				FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */,
+				FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */,
+				FCA279E92C0BE46500DC4C86 /* Fortunes_resetValues.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -259,7 +267,9 @@
 				FCD292C41BE7E60200F5BDDC /* MenuViewController.m in Sources */,
 				957A93021159BB1F006760A3 /* FortuneViewController.m in Sources */,
 				FCA279E42C0AE68500DC4C86 /* DetailVC.swift in Sources */,
+				FCA279E62C0AF82000DC4C86 /* FortuneVC.swift in Sources */,
 				FCA279E22C0ADE4000DC4C86 /* Button+Cootie.swift in Sources */,
+				FCA279E82C0BE0F700DC4C86 /* Fortunes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

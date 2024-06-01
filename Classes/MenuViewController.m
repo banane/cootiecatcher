@@ -7,7 +7,10 @@
 //
 
 #import "MenuViewController.h"
-#import "FortuneViewController.h"
+#import "Cootie-Swift.h"
+
+
+@class FortunesVC;
 
 @interface MenuViewController ()
 
@@ -106,7 +109,8 @@
 }
 
 -(IBAction)viewFortunes:(id)sender{
-    FortuneViewController *fvc = [[FortuneViewController alloc] initWithNibName:@"FortuneViewController" bundle:nil];
+    FortunesVC *fvc = [[FortunesVC alloc] initWithNibName:@"FortuneViewController" bundle:nil];
+   
     [[self navigationController] pushViewController:fvc animated:YES];
     
 }

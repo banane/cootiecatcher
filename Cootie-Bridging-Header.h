@@ -9,5 +9,6 @@
 #ifndef Cootie_Bridging_Header_h
 #define Cootie_Bridging_Header_h
 
+#include "AppDelegate.h";
 
 #endif /* Cootie_Bridging_Header_h */

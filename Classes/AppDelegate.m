@@ -8,8 +8,10 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "Cootie-Swift.h"
+#import "Fortunes_resetValues.h"
 
 @implementation AppDelegate
+@class Fortunes;
 
 @synthesize window, navCtrl, resetValues;
 
@@ -23,29 +25,15 @@
     [self.window makeKeyAndVisible];
 	[self.window setTintColor:[UIColor blackColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
-    [self setupResetValues];
 	[self setupDB];
     [self setNavigationBarLook];
 	return YES;
 }
 
-- (void)setupResetValues {
-   resetValues = [[NSArray alloc] initWithObjects:
-                                  @"You will be president.",
-                                  @"Giraffes are neat.",
-                                  @"Someone will steal your pencil.",
-                                  @"Give someone a dollar.",
-                                  @"Nobody gets you, like I get you.",
-                                  @"Your secret is safe.",
-                                  @"You will make an amazing pie.",
-                                  @"Your wish will come true.",
-                                  nil ] ;
-}
-
 - (void)setupDB{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     if (![userDefaults objectForKey:@"fortunes"]) {
-        [userDefaults setObject:resetValues forKey: @"fortunes"];
+        [userDefaults setObject:StaticConstants.resetValues forKey: @"fortunes"];
     }
 }
 
