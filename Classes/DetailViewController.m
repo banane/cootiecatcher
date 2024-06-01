@@ -6,7 +6,7 @@
 //  Copyright 2010 Anna Billstrom (banane.com) All Rights Reserved
 
 #import "DetailViewController.h"
-#import "UIButton+Cootie.h"
+#import "Cootie-Swift.h"
 
 @implementation DetailViewController {
     NSString *fortune;

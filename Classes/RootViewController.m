@@ -9,7 +9,6 @@
 #import "RootViewController.h"
 #import "MenuViewController.h"
 #import "AppDelegate.h"
-#import "UIButton+Cootie.h"
 
 @implementation RootViewController
 
@@ -50,6 +49,7 @@
     AudioServicesCreateSystemSoundID(baseURL, &mysound);
 	AudioServicesPropertyID flag = 0; 
 	AudioServicesSetProperty(kAudioServicesPropertyIsUISound, sizeof(SystemSoundID), &mysound, sizeof(AudioServicesPropertyID), &flag);
+    fortuneArray = [NSUserDefaults.standardUserDefaults objectForKey:@"fortunes"];
     
     [settingsBtn makeCootie];
     [againBtn makeCootie];
@@ -75,7 +75,6 @@
 		[self animateToy:flipTimes];        
 		[self playSound];
 	} else if (stage == 2) {
-		NSLog(@"in stage is 3");
 		[self revealFortune:flipTimes];
 	}
 }
@@ -87,9 +86,7 @@
 	
 	for(int i=1; i<=numTimes; i++){
 		
-		// flip alternator
 		alternator ^=1;
-        NSLog(@"alternator: %d", alternator);
 		[animationArray addObject:[masterImageArray objectAtIndex:alternator]] ;
 		
 		// store the last state of tall/wide for next stage

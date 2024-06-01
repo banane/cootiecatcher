@@ -26,6 +26,7 @@
 		95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E2A6D4119A66B2004E0D4D /* me_jenny.png */; };
 		95EF5F83115A9A93009A01A2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EF5F81115A9A93009A01A2 /* DetailViewController.m */; };
 		ED417CF21BEB137800704A40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED417CF11BEB137800704A40 /* Images.xcassets */; };
+		FCA279E22C0ADE4000DC4C86 /* Button+Cootie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */; };
 		FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */; };
 		FCD292C41BE7E60200F5BDDC /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD292C21BE7E60200F5BDDC /* MenuViewController.m */; };
 		FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */; };
@@ -60,6 +61,8 @@
 		95EF5F81115A9A93009A01A2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		ED417CF11BEB137800704A40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Cootie/Images.xcassets; sourceTree = "<group>"; };
 		FC2709402C0AA24F00BB9010 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Cootie.swift"; sourceTree = "<group>"; };
+		FCA279AA2C0ABFD700DC4C86 /* Cootie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cootie-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalterTurncoat.ttf; sourceTree = "<group>"; };
 		FCB9241C1BE95714006EB199 /* UIButton+Cootie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Cootie.h"; sourceTree = "<group>"; };
 		FCD292C11BE7E60200F5BDDC /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 				FCD292C11BE7E60200F5BDDC /* MenuViewController.h */,
 				FCD292C21BE7E60200F5BDDC /* MenuViewController.m */,
 				FCB9241C1BE95714006EB199 /* UIButton+Cootie.h */,
+				FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -136,6 +140,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources-iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				FCA279AA2C0ABFD700DC4C86 /* Cootie-Bridging-Header.h */,
 				FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */,
 				9517278711880178003120ED /* cootie.wav */,
 				95E2A6D4119A66B2004E0D4D /* me_jenny.png */,
@@ -257,6 +262,7 @@
 				95426307114D92CB00AA5D28 /* RootViewController.m in Sources */,
 				FCD292C41BE7E60200F5BDDC /* MenuViewController.m in Sources */,
 				957A93021159BB1F006760A3 /* FortuneViewController.m in Sources */,
+				FCA279E22C0ADE4000DC4C86 /* Button+Cootie.swift in Sources */,
 				95EF5F83115A9A93009A01A2 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,15 +273,20 @@
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 100;
+				EAGER_LINKING = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Cootie_Prefix.pch;
@@ -298,14 +309,19 @@
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 100;
+				EAGER_LINKING = YES;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Cootie_Prefix.pch;
 				INFOPLIST_FILE = "Cootie-Info.plist";
@@ -348,6 +364,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = YES;
+				DOCC_EXTRACT_SWIFT_INFO_FOR_OBJC_SYMBOLS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -358,8 +376,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -386,6 +407,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = YES;
+				DOCC_EXTRACT_SWIFT_INFO_FOR_OBJC_SYMBOLS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -395,8 +418,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				ONLY_ACTIVE_ARCH = YES;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

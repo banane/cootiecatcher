@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 
+@class UIButton;
 
 @interface RootViewController : UIViewController {
 

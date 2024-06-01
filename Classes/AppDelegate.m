@@ -9,7 +9,6 @@
 #import "RootViewController.h"
 
 @implementation AppDelegate
-//@class MainController;
 
 @synthesize window, navCtrl, resetValues;
 
