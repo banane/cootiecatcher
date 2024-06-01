@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "Cootie-Swift.h"
 
 @implementation AppDelegate
 

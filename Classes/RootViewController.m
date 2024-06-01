@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "MenuViewController.h"
 #import "AppDelegate.h"
+#import "Cootie-Swift.h"
 
 @implementation RootViewController
 
@@ -51,8 +52,8 @@
 	AudioServicesSetProperty(kAudioServicesPropertyIsUISound, sizeof(SystemSoundID), &mysound, sizeof(AudioServicesPropertyID), &flag);
     fortuneArray = [NSUserDefaults.standardUserDefaults objectForKey:@"fortunes"];
     
-    [settingsBtn makeCootie];
-    [againBtn makeCootie];
+    [settingsBtn setStyle];
+    [againBtn setStyle];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

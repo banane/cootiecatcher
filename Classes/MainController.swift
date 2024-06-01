@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 @objc class MainController: UIViewController {
     @IBOutlet retain var blueButton: UIButton!
@@ -15,6 +16,10 @@ import Foundation
     @IBOutlet retain var greenButton: UIButton!
     @IBOutlet retain var againButton: UIButton!
     @IBOutlet retain var settingsButton: UIButton!
+    @IBOutlet retain var fortuneLabel: UILabel!
+        
+    @IBOutlet retain var closedImageView: UIImageView!
+
     
     var fortuneArray: NSMutableArray
     var imgNumsArray: NSArray

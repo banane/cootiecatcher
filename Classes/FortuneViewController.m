@@ -7,7 +7,9 @@
 
 #import "FortuneViewController.h"
 #import "AppDelegate.h"
-#import "DetailViewController.h"
+#import "Cootie-Swift.h"
+
+@class DetailVC;
 
 #define BARBUTTON(TITLE, SELECTOR) [[[UIBarButtonItem alloc] initWithTitle:TITLE style:UIBarButtonItemStylePlain target:self action:SELECTOR] autorelease]
 
@@ -78,9 +80,8 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	DetailViewController *dvc = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:[NSBundle mainBundle]];
-    dvc.rowOfFortune = (NSInteger *)indexPath.row;
+    DetailVC *dvc = [[DetailVC alloc] initWithNibName:@"DetailViewController" bundle:[NSBundle mainBundle]];
+    dvc.rowOfFortune = indexPath.row;
 	[self.navigationController pushViewController:dvc animated:YES];
 }
 

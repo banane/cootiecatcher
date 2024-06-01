@@ -9,7 +9,7 @@
 import UIKit
 
 @objc extension UIButton {
-    @objc func makeCootie() {
+    @objc func setStyle() {
         titleLabel?.font = UIFont(name: "WalterTurncoat", size: 18.0)
         let padding_button: Float = 6.0
         let titleInsets = UIEdgeInsets(top: 0.0, left: CGFloat(padding_button), bottom: 0.0, right: CGFloat(-padding_button))
