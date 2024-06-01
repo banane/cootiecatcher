@@ -9,24 +9,18 @@
 
 
 @interface DetailViewController : UIViewController <UITextFieldDelegate> {
-	
-	NSManagedObject	*selectedObject;
+	NSInteger *rowOfFortune;
 	IBOutlet UITextField *fortuneTextField;
 	IBOutlet UIButton  *saveButton;
     IBOutlet UIButton *clearBtn;
-	NSString *tmpFortune;
-	
 }
 
-@property (nonatomic, retain) NSManagedObject *selectedObject;
 @property (nonatomic, retain) UITextField *fortuneTextField;
 @property (nonatomic, retain) UIButton *saveButton;
 @property (nonatomic, strong) UIButton *clearBtn;
-@property (nonatomic, retain) NSString *tmpFortune;
+@property NSInteger *rowOfFortune;
 
 
--(IBAction)textFieldDidEndEditing:(UITextField *)textField;
-- (BOOL)textFieldShouldReturn:(UITextField *)textField;
 -(IBAction)clearClicked:(id)sender;
 -(IBAction)saveClicked:(id)sender;
 

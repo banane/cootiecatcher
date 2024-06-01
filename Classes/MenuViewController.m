@@ -78,12 +78,6 @@
         case 1:
             [self clickContactUs:nil];
             break;
-        case 2:
-            [self clickNewIdea:nil];
-            break;
-        case 3:
-            [self clickDiscuss:nil];
-            break;
         case 4:
             [self viewAbout:nil];
             break;
@@ -99,7 +93,7 @@
 }
 
 - (IBAction)clickContactUs:(id)sender{
-//    [UserVoice presentUserVoiceContactUsFormForParentViewController:self];
+    // share menu with banane-at-gmail.com
 }
 
 - (IBAction)clickDiscuss:(id)sender{

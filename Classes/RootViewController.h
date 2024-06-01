@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import <CoreData/CoreData.h>
 
 
 @interface RootViewController : UIViewController {
@@ -29,9 +28,6 @@
 	int stage;
 	int lastState;
 	
-	NSFetchedResultsController *fetchedResultsController;
-	NSManagedObjectContext *managedObjectContext;
-
 	NSArray *colors;
 	NSArray *imgNumsArray;
 	NSArray *masterImageArray;
@@ -54,9 +50,6 @@
 @property (nonatomic) int lastState;
 
 @property (nonatomic) SystemSoundID mysound;
-
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, retain) NSMutableArray *fortuneArray;
 @property (nonatomic, retain) NSArray *imgNumsArray;

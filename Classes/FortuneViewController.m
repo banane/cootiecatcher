@@ -8,36 +8,18 @@
 #import "FortuneViewController.h"
 #import "AppDelegate.h"
 #import "DetailViewController.h"
-#import "Fortune.h"
 
 #define BARBUTTON(TITLE, SELECTOR) [[[UIBarButtonItem alloc] initWithTitle:TITLE style:UIBarButtonItemStylePlain target:self action:SELECTOR] autorelease]
 
-
 @implementation FortuneViewController
 
-@synthesize fetchedResultsController, managedObjectContext;
-
-
-
 - (void)viewDidLoad {
-	
-	[[self navigationController] setNavigationBarHidden:NO animated:YES];
-
     [super viewDidLoad];
-	NSLog(@"inside fvc");
 
-	AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-	self.managedObjectContext = appDelegate.managedObjectContext;
-	self.title = @"Fortunes";
-	self.navigationItem.rightBarButtonItem = BARBUTTON(@"Reset", @selector(reset));
-	
-	NSError *error = nil;
-	if (![[self fetchedResultsController] performFetch:&error]) {
-		abort();
-	}
-	
+	[[self navigationController] setNavigationBarHidden:NO animated:YES];
+    self.title = @"Fortunes";
+    self.navigationItem.rightBarButtonItem = BARBUTTON(@"Reset", @selector(reset));
 }
-
 
 - (void)reset {
     
@@ -59,46 +41,22 @@
     
 }
 
-
-
 - (void)resetFortunesOK{
-    NSFetchRequest *fRequest = [[NSFetchRequest alloc] init];
-    [fRequest setEntity:[NSEntityDescription entityForName:@"Fortune" inManagedObjectContext:managedObjectContext]];
-    
-    NSError *error = nil;
-    NSArray *oldForts = [[managedObjectContext executeFetchRequest:fRequest error:&error] retain] ;
-    
-    for (NSManagedObject * fort in oldForts) {
-        [managedObjectContext deleteObject:fort];
-    }
-    
-    int i=0;
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    for(NSString *f_str in appDelegate.resetValues){
-        NSManagedObject *newFortune = [NSEntityDescription insertNewObjectForEntityForName:@"Fortune" inManagedObjectContext:managedObjectContext];
-        [newFortune setValue:f_str forKey:@"FortuneString"];
-        [newFortune setValue:[NSNumber numberWithInt:i] forKey:@"FortunePosition"];
-        
-        if (![managedObjectContext save:&error]) {
-            NSLog(@"Error adding Fortune - error:%@",error);
-        }
-        i++;
-    }
+    [NSUserDefaults.standardUserDefaults setObject:appDelegate.resetValues forKey:@"fortunes"];
 }
 
 #pragma mark -
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[fetchedResultsController sections] count];
+    return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    return (int)[[[NSUserDefaults standardUserDefaults] objectForKey:@"fortunes"] count];
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,8 +69,8 @@
     }
     
 	// Configure the cell.
-	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = [[managedObject valueForKey:@"FortuneString"] description];
+    NSString *fortune = [[NSUserDefaults.standardUserDefaults objectForKey:@"fortunes"] objectAtIndex: indexPath.row];
+	cell.textLabel.text = fortune;
     cell.textLabel.font = [UIFont fontWithName:@"WalterTurncoat" size:18.0f];
 	
     return cell;
@@ -122,101 +80,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	DetailViewController *dvc = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:[NSBundle mainBundle]];
-	NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-	
-	dvc.selectedObject = selectedObject;
+    dvc.rowOfFortune = (NSInteger *)indexPath.row;
 	[self.navigationController pushViewController:dvc animated:YES];
-
 }
-
-
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-
-
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the managed object for the given index path
-		NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
-		[context deleteObject:[fetchedResultsController objectAtIndexPath:indexPath]];
-		
-		// Save the context.
-		NSError *error = nil;
-		if (![context save:&error]) {
-			
-			NSLog(@"Unresolved error in commiteditingstyle %@, %@", error, [error userInfo]);
-			abort();
-		}
-		
-	}   
-}
-
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // The table view should not be re-orderable.
-    return NO;
-}
-
-
-#pragma mark -
-#pragma mark Fetched results controller
-
-- (NSFetchedResultsController *)fetchedResultsController {
-    
-    if (fetchedResultsController != nil) {		
-        return fetchedResultsController;
-	}
-    /*
-	 Set up the fetched results controller.
-	 */
-	// Create the fetch request for the entity.
-	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-	
-	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Fortune" inManagedObjectContext:managedObjectContext];
-	
-	[fetchRequest setEntity:entity];
-	
-	// Set the batch size to a suitable number.
-	[fetchRequest setFetchBatchSize:8];
-	
-	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"FortunePosition" ascending:YES];
-	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-	
-	[fetchRequest setSortDescriptors:sortDescriptors];
-	
-	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
-    aFetchedResultsController.delegate = self;
-	self.fetchedResultsController = aFetchedResultsController;
-
-	
-	NSLog(@"inside fvcs frc retaincount: %d", (int)[aFetchedResultsController retainCount]);
-
-	return fetchedResultsController;
-}    
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-	// In the simplest, most efficient, case, reload the table view.
-	[self.tableView reloadData];
-}
-
-
-
-#pragma mark -
-#pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-	// Relinquish ownership of any cached data, images, etc that aren't in use.
-}
-
 
 @end
 

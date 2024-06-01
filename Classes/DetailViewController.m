@@ -8,22 +8,19 @@
 #import "DetailViewController.h"
 #import "UIButton+Cootie.h"
 
-@implementation DetailViewController
-
-@synthesize selectedObject, fortuneTextField, saveButton, clearBtn, tmpFortune;
-
-
--(IBAction)textFieldDidEndEditing:(UITextField *)textField{	
-	tmpFortune = [textField text];
+@implementation DetailViewController {
+    NSString *fortune;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	[textField resignFirstResponder];
-	return NO;
-}
+@synthesize fortuneTextField, saveButton, clearBtn, rowOfFortune;
 
 -(IBAction)saveClicked:(id)sender{
-	[selectedObject setValue:[fortuneTextField text] forKey:@"FortuneString"];
+    NSMutableArray *tmpArray = [[NSUserDefaults.standardUserDefaults objectForKey:@"fortunes"] mutableCopy];
+    int myInt = (int)rowOfFortune;
+    tmpArray[myInt] = fortuneTextField.text;
+    
+    NSArray *tmp3 = [NSArray arrayWithArray:tmpArray];
+    [NSUserDefaults.standardUserDefaults setObject:tmp3 forKey:@"fortunes"];
     [[self navigationController] popViewControllerAnimated:YES];
 }
 
@@ -36,14 +33,9 @@
 	fortuneTextField.delegate = self;
     [fortuneTextField setFont:[UIFont fontWithName:@"WalterTurncoat" size:20.0]];
 	self.title=@"Edit Fortune";
-	fortuneTextField.text = [[selectedObject valueForKey:@"FortuneString"] description];
+    fortuneTextField.text = [[NSUserDefaults.standardUserDefaults objectForKey:@"fortunes"] objectAtIndex: rowOfFortune];
     [saveButton makeCootie];
     [clearBtn makeCootie];
 }
-
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	 return YES;
-}
-
 
 @end
