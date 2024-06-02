@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
-		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
@@ -29,19 +27,16 @@
 		FCA279E82C0BE0F700DC4C86 /* Fortunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */; };
 		FCA279EB2C0BE75000DC4C86 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279EA2C0BE75000DC4C86 /* MenuVC.swift */; };
 		FCA279ED2C0C00DD00DC4C86 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279EC2C0C00DD00DC4C86 /* RootVC.swift */; };
+		FCA279EF2C0D29DB00DC4C86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279EE2C0D29DB00DC4C86 /* AppDelegate.swift */; };
 		FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */; };
 		FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Cootie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cootie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28A0AAE50D9B0CCF005BE974 /* Cootie_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cootie_Prefix.pch; sourceTree = "<group>"; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Cootie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cootie-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		9512086A115952D80009A649 /* Cootie2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cootie2-Info.plist"; sourceTree = "<group>"; };
 		9517278711880178003120ED /* cootie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cootie.wav; sourceTree = "<group>"; };
@@ -55,15 +50,13 @@
 		9588982D115BF5B60008AB8D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailViewController.xib; path = Classes/DetailViewController.xib; sourceTree = "<group>"; };
 		95E2A6D4119A66B2004E0D4D /* me_jenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_jenny.png; sourceTree = "<group>"; };
 		ED417CF11BEB137800704A40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Cootie/Images.xcassets; sourceTree = "<group>"; };
-		FC2709402C0AA24F00BB9010 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Cootie.swift"; sourceTree = "<group>"; };
-		FCA279AA2C0ABFD700DC4C86 /* Cootie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cootie-Bridging-Header.h"; sourceTree = "<group>"; };
 		FCA279E32C0AE68500DC4C86 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneVC.swift; sourceTree = "<group>"; };
 		FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortunes.swift; sourceTree = "<group>"; };
-		FCA279E92C0BE46500DC4C86 /* Fortunes_resetValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fortunes_resetValues.h; sourceTree = "<group>"; };
 		FCA279EA2C0BE75000DC4C86 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		FCA279EC2C0C00DD00DC4C86 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
+		FCA279EE2C0D29DB00DC4C86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalterTurncoat.ttf; sourceTree = "<group>"; };
 		FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = Classes/MenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,16 +79,13 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623240D0F684500981E51 /* AppDelegate.h */,
-				1D3623250D0F684500981E51 /* AppDelegate.m */,
-				FC2709402C0AA24F00BB9010 /* MainController.swift */,
+				FCA279EE2C0D29DB00DC4C86 /* AppDelegate.swift */,
 				FCA279EC2C0C00DD00DC4C86 /* RootVC.swift */,
 				FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */,
 				FCA279E32C0AE68500DC4C86 /* DetailVC.swift */,
 				FCA279EA2C0BE75000DC4C86 /* MenuVC.swift */,
 				FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */,
 				FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */,
-				FCA279E92C0BE46500DC4C86 /* Fortunes_resetValues.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -114,7 +104,6 @@
 				ED417CF11BEB137800704A40 /* Images.xcassets */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				FCD4AC201BE3D94700E34A85 /* Views */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources-iPhone */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -123,19 +112,9 @@
 			name = CustomTemplate;
 			sourceTree = "<group>";
 		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				28A0AAE50D9B0CCF005BE974 /* Cootie_Prefix.pch */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
 		29B97317FDCFA39411CA2CEA /* Resources-iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				FCA279AA2C0ABFD700DC4C86 /* Cootie-Bridging-Header.h */,
 				FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */,
 				9517278711880178003120ED /* cootie.wav */,
 				95E2A6D4119A66B2004E0D4D /* me_jenny.png */,
@@ -202,6 +181,7 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 3PKSYT4R4Q;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -252,9 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				FCA279E42C0AE68500DC4C86 /* DetailVC.swift in Sources */,
+				FCA279EF2C0D29DB00DC4C86 /* AppDelegate.swift in Sources */,
 				FCA279E62C0AF82000DC4C86 /* FortuneVC.swift in Sources */,
 				FCA279E22C0ADE4000DC4C86 /* Button+Cootie.swift in Sources */,
 				FCA279ED2C0C00DD00DC4C86 /* RootVC.swift in Sources */,
@@ -274,6 +253,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -299,6 +279,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher;
 				PRODUCT_NAME = Cootie;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -310,6 +292,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -333,6 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher;
 				PRODUCT_NAME = Cootie;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

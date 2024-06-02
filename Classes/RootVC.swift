@@ -16,7 +16,7 @@ import AudioToolbox
     @IBOutlet var redButton: UIButton?
     @IBOutlet var greenButton: UIButton?
     
-    @IBOutlet var settingsBtn: UIButton?
+    @IBOutlet var menuBtn: UIButton?
     @IBOutlet var againBtn: UIButton?
     
     @IBOutlet var fortuneLabel: UILabel?
@@ -41,6 +41,8 @@ import AudioToolbox
     
     override public func viewDidLoad() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.title = "Cootie"
+        self.navigationItem.titleView?.tintColor = .white
         
     }
     
@@ -77,7 +79,7 @@ import AudioToolbox
         
     }
     
-    @objc @IBAction func seeSettings(_ sender: UIButton){
+    @IBAction func seeMenu(_ sender: UIButton){
         let menuVC = MenuVC(nibName: "MenuViewController", bundle: nil)
         self.navigationController?.pushViewController(menuVC, animated: true)
     }

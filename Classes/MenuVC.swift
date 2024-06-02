@@ -10,9 +10,12 @@ import Foundation
 import UIKit
 
 @objc public class MenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let fontAttribution = [NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!]
+    let colorAttribution = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
+
         cell.textLabel!.text = titles[indexPath.row]
         cell.textLabel?.textColor = .white
         cell.backgroundColor = .clear
@@ -23,22 +26,42 @@ import UIKit
     @IBOutlet public var tableView: UITableView?
     var titles: [String] = ["About Cootie", "Contact Us", "Fortunes"]
     
+    public override func viewWillAppear(_ animated: Bool) {
+        let leftItem = UIBarButtonItem()
+        leftItem.title = "Cootie"
+        leftItem.tintColor = .white
+        leftItem.setTitleTextAttributes(fontAttribution, for: .normal)
+        self.navigationController?.navigationItem.titleView?.tintColor = .white
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = leftItem
+    }
     public override func viewDidLoad() {
         self.title = "Menu"
-        let fontAttribution = [NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!]
-        let colorAttribution = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.titleTextAttributes = fontAttribution
-        self.navigationController?.navigationBar.titleTextAttributes = colorAttribution
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(fontAttribution, for: .normal)
 
         let leftItem = UIBarButtonItem()
         leftItem.title = "Cootie"
-        UIBarButtonItem.appearance().tintColor = .white
+        leftItem.tintColor = .white
         leftItem.setTitleTextAttributes(fontAttribution, for: .normal)
-        leftItem.setTitleTextAttributes(colorAttribution, for: .normal)
-        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationItem.titleView?.tintColor = .white
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = leftItem
+       
+        setNavigationBarLook()
+
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    
+    func setNavigationBarLook(){
+        let shadow = NSShadow()
+        shadow.shadowOffset = CGSizeMake(0.0, 1.0)
+        shadow.shadowColor = UIColor(named: "gray")
+        let shadowAttribution = [NSAttributedString.Key.shadow: shadow]
+        UINavigationBar.appearance().barTintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = fontAttribution
+        UINavigationBar.appearance().titleTextAttributes = shadowAttribution
+        UINavigationBar.appearance().titleTextAttributes = colorAttribution
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,7 +87,7 @@ import UIKit
     }
     
     func showFortunes(){
-        var fvc = FortunesVC(nibName: "FortuneViewController", bundle: nil)
+        let fvc = FortunesVC(nibName: "FortuneViewController", bundle: nil)
         self.navigationController?.pushViewController(fvc, animated: true)
     }
     

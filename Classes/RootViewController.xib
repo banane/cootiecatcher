@@ -20,8 +20,8 @@
                 <outlet property="closedImageView" destination="4" id="42"/>
                 <outlet property="fortuneLabel" destination="5" id="43"/>
                 <outlet property="greenButton" destination="7" id="45"/>
+                <outlet property="menuBtn" destination="N0x-gB-BLy" id="odt-Kg-Mmk"/>
                 <outlet property="redButton" destination="6" id="47"/>
-                <outlet property="settingsBtn" destination="N0x-gB-BLy" id="WBl-u2-YpP"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="yellowButton" destination="9" id="48"/>
             </connections>
@@ -96,8 +96,8 @@
                         <action selector="click:" destination="-1" eventType="touchUpInside" id="s9g-Xv-w5q"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0x-gB-BLy" userLabel="saveButton">
-                    <rect key="frame" x="162" y="403" width="140" height="33"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0x-gB-BLy" userLabel="menuButton">
+                    <rect key="frame" x="161" y="403" width="140" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="WalterTurncoat" family="Walter Turncoat" pointSize="15"/>
@@ -106,7 +106,7 @@
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="seeSettings:" destination="-1" eventType="touchUpInside" id="35B-7M-naI"/>
+                        <action selector="seeMenu:" destination="-1" eventType="touchUpInside" id="mkv-5L-aqX"/>
                     </connections>
                 </button>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Fortune Revealed" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="revealedFortune">

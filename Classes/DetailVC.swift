@@ -15,6 +15,10 @@ import UIKit
     @IBOutlet var cancelButton: UIButton!
     @IBOutlet var fortuneTextField: UITextField!
     @objc public var rowOfFortune: Int = 0
+    
+    let fontAttribution = [NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!]
+    let colorAttribution = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,28 @@ import UIKit
         cancelButton.setStyle()
         fortuneTextField.text = getFortune()
         fortuneTextField.font = UIFont(name: "WalterTurncoat", size: 20.0)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.titleTextAttributes = fontAttribution
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(fontAttribution, for: .normal)
+
+        let leftItem = UIBarButtonItem()
+        leftItem.title = "Fortunes"
+        leftItem.tintColor = .white
+        leftItem.setTitleTextAttributes(fontAttribution, for: .normal)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = leftItem
+        setNavigationBarLook()
+    }
+    
+    func setNavigationBarLook(){
+        let shadow = NSShadow()
+        shadow.shadowOffset = CGSizeMake(0.0, 1.0)
+        shadow.shadowColor = UIColor(named: "gray")
+        let shadowAttribution = [NSAttributedString.Key.shadow: shadow]
+        UINavigationBar.appearance().barTintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = fontAttribution
+        UINavigationBar.appearance().titleTextAttributes = shadowAttribution
+        UINavigationBar.appearance().titleTextAttributes = colorAttribution
     }
     
     private func getFortune() -> String{
@@ -38,8 +64,6 @@ import UIKit
     @IBAction func save(){
         var array = UserDefaults.standard.object(forKey:"fortunes") as? [String] ?? [String]()
         array[rowOfFortune] = fortuneTextField.text ?? ""
-        print(fortuneTextField?.text)
-        print("above: fortune")
         let staticArray = array as NSArray
         UserDefaults.standard.set(staticArray, forKey: "fortunes")
         goHome()

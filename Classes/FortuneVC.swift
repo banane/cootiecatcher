@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 @objc public class FortunesVC: UITableViewController  {
-    
+    let fontAttribution = [NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!]
+    let colorAttribution = [NSAttributedString.Key.foregroundColor: UIColor.black]
+
     var fortunes: [String] = UserDefaults.standard.object(forKey: "fortunes") as! [String]
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -19,18 +21,34 @@ import UIKit
     
     public override func viewDidLoad() {
         self.title = "Fortunes"
-        let fontAttribution = [NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!]
+
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.titleTextAttributes = fontAttribution
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(fontAttribution, for: .normal)
+
         let rightButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(reset(_:)))
         rightButton.setTitleTextAttributes(fontAttribution, for: .normal)
         self.navigationItem.rightBarButtonItems = [rightButton]
+
         let leftItem = UIBarButtonItem()
         leftItem.title = "Menu"
+        leftItem.tintColor = .black
         leftItem.setTitleTextAttributes(fontAttribution, for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = leftItem
+        setNavigationBarLook()
+    }
+    
+    func setNavigationBarLook(){
+        let shadow = NSShadow()
+        shadow.shadowOffset = CGSizeMake(0.0, 1.0)
+        shadow.shadowColor = UIColor(named: "gray")
+        let shadowAttribution = [NSAttributedString.Key.shadow: shadow]
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        UINavigationBar.appearance().titleTextAttributes = fontAttribution
+        UINavigationBar.appearance().titleTextAttributes = shadowAttribution
+        UINavigationBar.appearance().titleTextAttributes = colorAttribution
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
