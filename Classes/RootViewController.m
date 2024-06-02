@@ -7,11 +7,11 @@
 
 
 #import "RootViewController.h"
-#import "MenuViewController.h"
 #import "AppDelegate.h"
 #import "Cootie-Swift.h"
 
 @implementation RootViewController
+@class MenuVC;
 
 @synthesize blueButton, yellowButton, redButton, greenButton, againBtn, settingsBtn, fortuneLabel, stage, lastState, closedImageView;
 
@@ -160,7 +160,7 @@
 
 - (IBAction)clickSettings:(id)sender{
     
-    MenuViewController *mvc = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    MenuVC *mvc = [[MenuVC alloc] initWithNibName:@"MenuViewController" bundle:nil];
 	[[self navigationController] pushViewController:mvc animated: YES];
 }
 

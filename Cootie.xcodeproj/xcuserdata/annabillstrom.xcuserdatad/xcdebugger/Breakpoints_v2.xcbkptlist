@@ -70,5 +70,83 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B10119E5-99E6-4DEF-BFE5-7822B34E985F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/FortuneVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B10119E5-99E6-4DEF-BFE5-7822B34E985F - 8e481ae9243ed818"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cootie.FortunesVC.viewDidLoad() -&gt; ()"
+                  moduleName = "Cootie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/annabillstrom/dev/ios/cootiecatcher/Classes/FortuneVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1856">
+               </Location>
+               <Location
+                  uuid = "B10119E5-99E6-4DEF-BFE5-7822B34E985F - 8e481ae9243ed83b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cootie.FortunesVC.viewDidLoad() -&gt; ()"
+                  moduleName = "Cootie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/annabillstrom/dev/ios/cootiecatcher/Classes/FortuneVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1856">
+               </Location>
+               <Location
+                  uuid = "B10119E5-99E6-4DEF-BFE5-7822B34E985F - 8e481ae9243ed885"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cootie.FortunesVC.viewDidLoad() -&gt; ()"
+                  moduleName = "Cootie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/annabillstrom/dev/ios/cootiecatcher/Classes/FortuneVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1944">
+               </Location>
+               <Location
+                  uuid = "B10119E5-99E6-4DEF-BFE5-7822B34E985F - 8e481ae9243ed885"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cootie.FortunesVC.viewDidLoad() -&gt; ()"
+                  moduleName = "Cootie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/annabillstrom/dev/ios/cootiecatcher/Classes/FortuneVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1920">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
