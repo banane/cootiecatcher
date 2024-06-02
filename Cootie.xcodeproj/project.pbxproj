@@ -29,6 +29,7 @@
 		FCA279E62C0AF82000DC4C86 /* FortuneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */; };
 		FCA279E82C0BE0F700DC4C86 /* Fortunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */; };
 		FCA279EB2C0BE75000DC4C86 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279EA2C0BE75000DC4C86 /* MenuVC.swift */; };
+		FCA279ED2C0C00DD00DC4C86 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279EC2C0C00DD00DC4C86 /* RootVC.swift */; };
 		FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */; };
 		FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortunes.swift; sourceTree = "<group>"; };
 		FCA279E92C0BE46500DC4C86 /* Fortunes_resetValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fortunes_resetValues.h; sourceTree = "<group>"; };
 		FCA279EA2C0BE75000DC4C86 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		FCA279EC2C0C00DD00DC4C86 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalterTurncoat.ttf; sourceTree = "<group>"; };
 		FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = Classes/MenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +92,7 @@
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
 				FC2709402C0AA24F00BB9010 /* MainController.swift */,
+				FCA279EC2C0C00DD00DC4C86 /* RootVC.swift */,
 				95426304114D92CB00AA5D28 /* RootViewController.h */,
 				95426305114D92CB00AA5D28 /* RootViewController.m */,
 				FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */,
@@ -260,6 +263,7 @@
 				FCA279E42C0AE68500DC4C86 /* DetailVC.swift in Sources */,
 				FCA279E62C0AF82000DC4C86 /* FortuneVC.swift in Sources */,
 				FCA279E22C0ADE4000DC4C86 /* Button+Cootie.swift in Sources */,
+				FCA279ED2C0C00DD00DC4C86 /* RootVC.swift in Sources */,
 				FCA279E82C0BE0F700DC4C86 /* Fortunes.swift in Sources */,
 				FCA279EB2C0BE75000DC4C86 /* MenuVC.swift in Sources */,
 			);

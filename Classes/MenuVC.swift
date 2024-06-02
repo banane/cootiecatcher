@@ -25,9 +25,20 @@ import UIKit
     
     public override func viewDidLoad() {
         self.title = "Menu"
+        let fontAttribution = [NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!]
+        let colorAttribution = [NSAttributedString.Key.foregroundColor: UIColor.white]
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.titleTextAttributes = fontAttribution
+        self.navigationController?.navigationBar.titleTextAttributes = colorAttribution
 
+        let leftItem = UIBarButtonItem()
+        leftItem.title = "Cootie"
+        UIBarButtonItem.appearance().tintColor = .white
+        leftItem.setTitleTextAttributes(fontAttribution, for: .normal)
+        leftItem.setTitleTextAttributes(colorAttribution, for: .normal)
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = leftItem
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

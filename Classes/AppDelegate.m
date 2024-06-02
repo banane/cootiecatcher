@@ -6,20 +6,21 @@
 //  Copyright 2010 Anna Billstrom (banane.com) All Rights Reserved
 
 #import "AppDelegate.h"
-#import "RootViewController.h"
+//#import "RootViewController.h"
 #import "Cootie-Swift.h"
 #import "Fortunes_resetValues.h"
 
 @implementation AppDelegate
 @class Fortunes;
+@class RootVC;
 
 @synthesize window, navCtrl, resetValues;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    RootViewController *mvc = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    RootVC *rvc = [[RootVC alloc] initWithNibName:@"RootViewController" bundle:nil];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.navCtrl = [[UINavigationController alloc] initWithRootViewController:mvc];
+    self.navCtrl = [[UINavigationController alloc] initWithRootViewController:rvc];
     self.window.rootViewController = navCtrl;
     
     [self.window makeKeyAndVisible];
@@ -48,13 +49,4 @@
                                                             }];
 }
 
-
-#pragma mark -
-#pragma mark Application's Documents directory
-
-- (NSString *)applicationDocumentsDirectory {
-	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-}
-
 @end
-

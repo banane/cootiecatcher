@@ -17,6 +17,5 @@
 @property (nonatomic, retain) UINavigationController *navCtrl;
 @property (nonatomic, retain) NSArray *resetValues;
 
-- (NSString *)applicationDocumentsDirectory;
 @end
 

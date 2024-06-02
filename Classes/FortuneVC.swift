@@ -19,18 +19,17 @@ import UIKit
     
     public override func viewDidLoad() {
         self.title = "Fortunes"
+        let fontAttribution = [NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!]
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!]
-        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!], for: .normal)
+        self.navigationController?.navigationBar.titleTextAttributes = fontAttribution
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(fontAttribution, for: .normal)
         let rightButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(reset(_:)))
-        rightButton.setTitleTextAttributes(
-            [NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!],
-            for: .normal)
+        rightButton.setTitleTextAttributes(fontAttribution, for: .normal)
         self.navigationItem.rightBarButtonItems = [rightButton]
         let leftItem = UIBarButtonItem()
         leftItem.title = "Menu"
-        leftItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "WalterTurncoat", size: 18)!], for: .normal)
+        leftItem.setTitleTextAttributes(fontAttribution, for: .normal)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = leftItem
     }
     
