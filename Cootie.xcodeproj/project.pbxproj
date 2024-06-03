@@ -11,7 +11,6 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		9517278811880178003120ED /* cootie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9517278711880178003120ED /* cootie.wav */; };
-		9538F58C1178446300C37A88 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9538F58B1178446300C37A88 /* AudioToolbox.framework */; };
 		95426308114D92CB00AA5D28 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95426306114D92CB00AA5D28 /* RootViewController.xib */; };
 		9546DA1211728A050098EEA7 /* wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546DA1111728A050098EEA7 /* wide.png */; };
 		9546DA1411728A110098EEA7 /* tall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546DA1311728A110098EEA7 /* tall.png */; };
@@ -40,7 +39,6 @@
 		8D1107310486CEB800E47090 /* Cootie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cootie-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		9512086A115952D80009A649 /* Cootie2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cootie2-Info.plist"; sourceTree = "<group>"; };
 		9517278711880178003120ED /* cootie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cootie.wav; sourceTree = "<group>"; };
-		9538F58B1178446300C37A88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		95426306114D92CB00AA5D28 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Classes/RootViewController.xib; sourceTree = "<group>"; };
 		9546DA1111728A050098EEA7 /* wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wide.png; sourceTree = "<group>"; };
 		9546DA1311728A110098EEA7 /* tall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tall.png; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
-				9538F58C1178446300C37A88 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +130,6 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
-				9538F58B1178446300C37A88 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -18,7 +18,6 @@
     },
     {
       "extent" : "full-screen",
-      "filename" : "launch.png",
       "idiom" : "iphone",
       "minimum-system-version" : "11.0",
       "orientation" : "portrait",
@@ -35,7 +34,6 @@
     },
     {
       "extent" : "full-screen",
-      "filename" : "launchimage.png",
       "idiom" : "iphone",
       "minimum-system-version" : "8.0",
       "orientation" : "portrait",

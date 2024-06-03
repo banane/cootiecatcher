@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import AudioToolbox
+import AVFoundation
 
 @objc public class RootVC: UIViewController {
     @IBOutlet var blueButton: UIButton?
@@ -23,11 +23,11 @@ import AudioToolbox
     
     @IBOutlet var closedImageView: UIImageView?
     
-    var mysound: SystemSoundID = 0
+    var paperSoundEffect: AVAudioPlayer?
     
     var state: Int = 0
     var lastState = 0
-    
+
     let colors: [String] = ["red", "green", "blue", "yellow"]
     let imageNumsArray: [[Int]] = [
         [1,6,5,2], [8,7,4,3]
@@ -35,15 +35,14 @@ import AudioToolbox
     
     var imageNames = ["tall", "wide", "closed"]
     var stage = 0
+   
     
-    
-    let soundPath = Bundle.main.path(forResource: "cootie", ofType: "wav")
+//    let soundPath = Bundle.main.path(forResource: "cootie", ofType: "wav")
     
     override public func viewDidLoad() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController?.title = "Cootie"
         self.navigationItem.titleView?.tintColor = .white
-        
     }
     
     @objc @IBAction func click(_ sender: UIButton){
@@ -112,7 +111,17 @@ import AudioToolbox
     }
     
     func playSound(){
-        AudioServicesPlaySystemSound(mysound)
+        let path = Bundle.main.path(forResource: "cootie", ofType:"wav")!
+        let url = URL(fileURLWithPath: path)
+
+
+        do {
+            paperSoundEffect = try AVAudioPlayer(contentsOf: url)
+            paperSoundEffect?.play()
+        } catch {
+            // couldn't load file :(
+        }
+        
     }
     
     func revealFortune(fortuneID: Int){
