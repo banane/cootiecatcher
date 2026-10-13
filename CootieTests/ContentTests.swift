@@ -6,8 +6,8 @@ import UIKit
 /// One sample of each kind of bundled content.
 struct ContentTests {
     @Test func posePhotosAreBundled() {
-        for pose in [Pose.closed, .tall, .wide] {
-            #expect(UIImage(named: pose.imageName) != nil, "missing \(pose.imageName)")
+        for name in ["tall", "wide", "closed"] {
+            #expect(UIImage(named: name) != nil, "missing \(name)")
         }
     }
 

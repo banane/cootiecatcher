@@ -8,44 +8,57 @@ struct CootieCatcherApp: App {
 
     init() {
         Theme.registerFont()
-        if let titleFont = UIFont(name: Theme.fontName, size: 18) {
-            UINavigationBar.appearance().titleTextAttributes = [.font: titleFont]
-        }
-        if let largeTitleFont = UIFont(name: Theme.fontName, size: 32) {
-            UINavigationBar.appearance().largeTitleTextAttributes = [.font: largeTitleFont]
-        }
+        Self.setNavigationBarLook()
 
-        var frameDuration = Duration.milliseconds(200)
-        var defaults = UserDefaults.standard
+        var duration: Double?
+        var storeURL: URL? = FortuneStore.defaultStoreURL
         #if DEBUG
         // Launch arguments for UI tests: `-debugFastFlips YES` skips the flip animation and
         // `-debugFreshFortunes YES` starts from the preset fortunes without touching the real ones.
         if UserDefaults.standard.bool(forKey: "debugFastFlips") {
-            frameDuration = .zero
+            duration = 0
         }
         if UserDefaults.standard.bool(forKey: "debugFreshFortunes") {
-            let suite = "ui-tests"
-            UserDefaults().removePersistentDomain(forName: suite)
-            defaults = UserDefaults(suiteName: suite) ?? .standard
+            storeURL = nil
         }
         #endif
-        _game = State(initialValue: CootieGame(frameDuration: frameDuration))
-        _fortunes = State(initialValue: FortuneStore(defaults: defaults))
+        _game = State(initialValue: duration.map { CootieGame(duration: $0) } ?? CootieGame())
+        _fortunes = State(initialValue: FortuneStore(storeURL: storeURL))
     }
 
     var body: some Scene {
         WindowGroup {
             RootView(game: game)
                 .environment(fortunes)
-                .onAppear { game.onFlip = { [sound] in sound.play() } }
+                .onAppear { game.playSound = { [sound] in sound.play() } }
         }
+    }
+
+    /// setNavigationBarLook and the window tint from the 2015 AppDelegate, plus the bar button
+    /// font from MenuViewController.
+    static func setNavigationBarLook() {
+        guard let font = UIFont(name: Theme.fontName, size: 18) else { return }
+        let shadow = NSShadow()
+        shadow.shadowOffset = CGSize(width: 0, height: 1)
+        shadow.shadowColor = UIColor.gray
+
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black, .font: font, .shadow: shadow]
+        let buttons = UIBarButtonItemAppearance()
+        buttons.normal.titleTextAttributes = [.foregroundColor: UIColor.black, .font: font]
+        appearance.buttonAppearance = buttons
+        appearance.backButtonAppearance = buttons
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }
 
 enum Route: Hashable {
     case menu
-    case about
     case fortunes
+    case editFortune(Int)
 }
 
 struct RootView: View {
@@ -59,11 +72,11 @@ struct RootView: View {
                 .navigationDestination(for: Route.self) { route in
                     switch route {
                     case .menu: MenuView()
-                    case .about: AboutView()
                     case .fortunes: FortunesView()
+                    case .editFortune(let index): EditFortuneView(index: index)
                     }
                 }
         }
-        .tint(.primary)
+        .tint(.black)
     }
 }

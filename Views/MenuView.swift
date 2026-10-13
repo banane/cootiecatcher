@@ -1,36 +1,36 @@
 import SwiftUI
 
+/// MenuViewController from 2015: white rows on the me_jenny photo. Contact Us, I've got an idea and
+/// Discuss Cootie! went with the UserVoice SDK in 2024.
 struct MenuView: View {
+    @State private var showingAbout = false
+
     var body: some View {
         List {
-            NavigationLink("About Cootie", value: Route.about)
-            NavigationLink("Fortunes", value: Route.fortunes)
+            Group {
+                NavigationLink("Fortunes", value: Route.fortunes)
+                Button("About CootieCatcher") { showingAbout = true }
+            }
+            .foregroundStyle(.white)
+            .font(Theme.font(18))
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
         }
-        .font(Theme.font(18))
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+        .background {
+            Image("me_jenny")
+                .resizable()
+                .ignoresSafeArea(edges: .bottom)
+        }
+        .background(Color.black.ignoresSafeArea())
         .navigationTitle("Menu")
         .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-struct AboutView: View {
-    var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                Image("me_jenny")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: 480)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .accessibilityLabel("Anna and Jennifer")
-                Text("By Anna Billstrom, with some help from her big sister Jennifer Huber.")
-                    .font(Theme.font(20, relativeTo: .title3))
-                    .multilineTextAlignment(.center)
-            }
-            .padding(24)
-            .frame(maxWidth: .infinity)
+        .alert("About CootieCatcher", isPresented: $showingAbout) {
+            Button("Cool") {}
+        } message: {
+            Text("By Anna Billstrom, with some help from her big sister Jennifer Huber.")
         }
-        .navigationTitle("About Cootie")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

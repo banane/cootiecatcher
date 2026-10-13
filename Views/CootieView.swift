@@ -8,38 +8,32 @@ struct CootieView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text(game.prompt)
-                .font(Theme.font(22, relativeTo: .title2))
-                .foregroundStyle(.white)
-                .frame(minHeight: 32)
-                .accessibilityIdentifier("prompt")
+            Spacer(minLength: 0)
 
             catcher
 
-            fortuneCard
-
             Spacer(minLength: 0)
 
-            HStack(spacing: 16) {
-                PaperButton(title: "Again", action: game.playAgain)
-                    .disabled(game.fortuneNumber == nil)
-                    .accessibilityIdentifier("again")
-                PaperButton(title: "Menu", action: showMenu)
+            HStack {
+                Spacer()
+                PaperButton(title: "Settings", action: showMenu)
                     .accessibilityIdentifier("menu")
             }
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black.ignoresSafeArea())
+        .background(Self.background.ignoresSafeArea())
+        .overlay { fortuneScreen }
+        .animation(.easeInOut(duration: 0.4), value: game.fortuneID)
     }
 
     private var catcher: some View {
-        Image(game.pose.imageName)
+        Image(game.image)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .accessibilityElement()
             .accessibilityLabel("Cootie catcher")
-            .accessibilityValue(game.pose.rawValue)
+            .accessibilityValue(game.image)
             .accessibilityIdentifier("catcher")
             .overlay {
                 Grid(horizontalSpacing: 0, verticalSpacing: 0) {
@@ -58,47 +52,70 @@ struct CootieView: View {
 
     private func flapButton(_ flap: Flap) -> some View {
         Button {
-            Task { await game.tap(flap) }
+            game.click(flap)
         } label: {
             Color.clear
                 .contentShape(Rectangle())
         }
-        .disabled(!game.canTap)
         .accessibilityLabel(flap.label)
-        .accessibilityValue(game.pose.number(on: flap).map(String.init) ?? "")
-        .accessibilityIdentifier("flap-\(flap.rawValue)")
+        .accessibilityValue(number(on: flap).map(String.init) ?? "")
+        .accessibilityIdentifier("flap-\(flap.label.lowercased())")
     }
 
+    /// The number printed on a flap in the photo showing, for VoiceOver.
+    private func number(on flap: Flap) -> Int? {
+        guard let row = game.masterImageArray.firstIndex(of: game.image), row < 2 else { return nil }
+        return game.imgNumsArray[row][flap.rawValue]
+    }
+
+    /// RootViewController's background.
+    static let background = Color(white: 0.02173913043)
+
+    /// The fortune on a black screen. As in revealFortune, the catcher and flaps are hidden,
+    /// Again shows, and Settings stays.
     @ViewBuilder
-    private var fortuneCard: some View {
-        if let number = game.fortuneNumber {
-            Text(fortunes.fortune(number: number))
-                .font(Theme.font(22, relativeTo: .title2))
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.black)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(Color(white: 0.95), in: RoundedRectangle(cornerRadius: 12))
-                .accessibilityIdentifier("fortune")
-                .transition(.scale.combined(with: .opacity))
+    private var fortuneScreen: some View {
+        if let number = game.fortuneID {
+            VStack(spacing: 20) {
+                Spacer()
+                Text(fortunes.fortune(number: number))
+                    .font(Theme.font(36, relativeTo: .largeTitle))
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.white)
+                    .minimumScaleFactor(0.5)
+                    .accessibilityIdentifier("fortune")
+                Spacer()
+                HStack {
+                    PaperButton(title: "Again", action: game.playAgain)
+                        .accessibilityIdentifier("again")
+                    Spacer()
+                    PaperButton(title: "Settings", action: showMenu)
+                }
+            }
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black.ignoresSafeArea())
+            .accessibilityAddTraits(.isModal)
+            .transition(.opacity)
         }
     }
 }
 
-/// White button with the hand-lettered font, as on the original main screen.
+/// The white button from the xibs, styled by makeCootie in UIButton+Cootie:
+/// WalterTurncoat 18, 6pt padding, sized to fit its title.
 struct PaperButton: View {
     let title: String
     let action: () -> Void
-    @Environment(\.isEnabled) private var isEnabled
 
     var body: some View {
         Button(action: action) {
             Text(title)
                 .font(Theme.font(18))
                 .foregroundStyle(.black)
-                .frame(maxWidth: .infinity, minHeight: 44)
-                .background(.white, in: RoundedRectangle(cornerRadius: 10))
-                .opacity(isEnabled ? 1 : 0.5)
+                .padding(.vertical, 6)
+                .padding(.horizontal, 12)
+                .frame(minHeight: 37)
+                .background(.white)
         }
         .buttonStyle(.plain)
     }
@@ -106,5 +123,5 @@ struct PaperButton: View {
 
 #Preview {
     CootieView(game: CootieGame(), showMenu: {})
-        .environment(FortuneStore(defaults: UserDefaults(suiteName: "preview")!))
+        .environment(FortuneStore(storeURL: nil))
 }

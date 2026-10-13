@@ -4,52 +4,32 @@ import Testing
 
 @MainActor
 struct FortuneStoreTests {
-    private func throwawayDefaults() -> UserDefaults {
-        let name = "FortuneStoreTests-\(UUID().uuidString)"
-        return UserDefaults(suiteName: name)!
+    private func throwawayStoreURL() -> URL {
+        URL.temporaryDirectory.appending(path: "FortuneStoreTests-\(UUID().uuidString).sqlite")
     }
 
-    @Test func firstLaunchUsesThePresets() {
-        let store = FortuneStore(defaults: throwawayDefaults())
-        #expect(store.fortunes == FortuneStore.presets)
+    @Test func firstLaunchAddsThePresets() {
+        let store = FortuneStore(storeURL: nil)
+        #expect(store.fortunes == FortuneStore.resetValues)
         #expect(store.fortune(number: 2) == "Giraffes are neat.")
     }
 
-    @Test func keepsFortunesSavedByTheOldApp() {
-        let defaults = throwawayDefaults()
-        var saved = FortuneStore.presets
-        saved[0] = "You will find a frog."
-        defaults.set(saved, forKey: "fortunes")
+    @Test func editsAreSavedToTheStoreFile() {
+        let url = throwawayStoreURL()
+        FortuneStore(storeURL: url).update(index: 7, to: "Pizza for dinner.")
 
-        #expect(FortuneStore(defaults: defaults).fortune(number: 1) == "You will find a frog.")
-    }
-
-    @Test func ignoresASavedListOfTheWrongLength() {
-        let defaults = throwawayDefaults()
-        defaults.set(["Only one"], forKey: "fortunes")
-
-        #expect(FortuneStore(defaults: defaults).fortunes == FortuneStore.presets)
-    }
-
-    @Test func editsAreTrimmedAndSaved() {
-        let defaults = throwawayDefaults()
-        FortuneStore(defaults: defaults).update(index: 7, to: "  Pizza for dinner.\n")
-
-        #expect(FortuneStore(defaults: defaults).fortune(number: 8) == "Pizza for dinner.")
-    }
-
-    @Test func blankEditIsIgnored() {
-        let store = FortuneStore(defaults: throwawayDefaults())
-        store.update(index: 0, to: "   ")
-        #expect(store.fortune(number: 1) == FortuneStore.presets[0])
+        let reopened = FortuneStore(storeURL: url)
+        #expect(reopened.fortune(number: 8) == "Pizza for dinner.")
+        #expect(reopened.fortunes.count == 8)
     }
 
     @Test func resetRestoresThePresets() {
-        let defaults = throwawayDefaults()
-        let store = FortuneStore(defaults: defaults)
+        let url = throwawayStoreURL()
+        let store = FortuneStore(storeURL: url)
         store.update(index: 3, to: "Changed")
         store.reset()
 
-        #expect(FortuneStore(defaults: defaults).fortunes == FortuneStore.presets)
+        #expect(store.fortunes == FortuneStore.resetValues)
+        #expect(FortuneStore(storeURL: url).fortunes == FortuneStore.resetValues)
     }
 }

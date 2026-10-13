@@ -1,48 +1,35 @@
 import SwiftUI
 
-/// The eight fortunes, numbered as on the flaps. Tap one to rewrite it.
+/// FortuneViewController from 2015: the fortunes in order, with Reset in the navigation bar.
 struct FortunesView: View {
     @Environment(FortuneStore.self) private var store
-    @State private var editing: EditTarget?
     @State private var confirmingReset = false
-
-    private struct EditTarget: Identifiable {
-        let index: Int
-        var id: Int { index }
-    }
 
     var body: some View {
         List(Array(store.fortunes.enumerated()), id: \.offset) { index, fortune in
-            Button {
-                editing = EditTarget(index: index)
-            } label: {
-                HStack(alignment: .firstTextBaseline, spacing: 12) {
-                    Text("\(index + 1)")
-                        .foregroundStyle(.secondary)
-                    Text(fortune)
-                        .foregroundStyle(.primary)
-                }
+            NavigationLink(value: Route.editFortune(index)) {
+                Text(fortune)
+                    .font(Theme.font(18))
+                    .foregroundStyle(.black)
             }
             .accessibilityIdentifier("fortune-\(index + 1)")
         }
-        .font(Theme.font(18))
+        .listStyle(.plain)
         .navigationTitle("Fortunes")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button("Reset") { confirmingReset = true }
         }
-        .alert("Reset Fortunes?", isPresented: $confirmingReset) {
-            Button("Reset", role: .destructive) { store.reset() }
+        .alert("Reset Fortunes", isPresented: $confirmingReset) {
+            Button("OK") { store.reset() }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("Go back to the preset fortunes. You will lose all of the fortunes you typed in.")
-        }
-        .sheet(item: $editing) { target in
-            EditFortuneView(index: target.index)
+            Text("Go back to preset fortunes. You will lose all of your typed in fortunes.")
         }
     }
 }
 
+/// DetailViewController from 2015: a text field with Clear and Save.
 struct EditFortuneView: View {
     let index: Int
     @Environment(FortuneStore.self) private var store
@@ -50,45 +37,34 @@ struct EditFortuneView: View {
     @State private var text = ""
     @FocusState private var focused: Bool
 
-    private var isBlank: Bool {
-        text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-    }
-
     var body: some View {
-        NavigationStack {
-            Form {
-                Section("Fortune \(index + 1)") {
-                    TextField("Fortune", text: $text, axis: .vertical)
-                        .font(Theme.font(20))
-                        .focused($focused)
-                        .submitLabel(.done)
-                        .onSubmit(save)
-                        .accessibilityIdentifier("fortune-field")
+        VStack(spacing: 79) {
+            TextField("", text: $text)
+                .font(Theme.font(20))
+                .foregroundStyle(.black)
+                .padding(.horizontal, 8)
+                .frame(height: 31)
+                .background(.white, in: RoundedRectangle(cornerRadius: 5))
+                .focused($focused)
+                .submitLabel(.done)
+                .onSubmit { focused = false }
+                .accessibilityIdentifier("fortune-field")
+
+            HStack(spacing: 46) {
+                PaperButton(title: "Clear") { text = "" }
+                PaperButton(title: "Save") {
+                    store.update(index: index, to: text)
+                    dismiss()
                 }
-            }
-            .navigationTitle("Update Fortune")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save", action: save)
-                        .disabled(isBlank)
-                }
-            }
-            .onAppear {
-                text = store.fortunes[index]
-                focused = true
             }
         }
-        .presentationDetents([.medium])
-    }
-
-    private func save() {
-        guard !isBlank else { return }
-        store.update(index: index, to: text)
-        dismiss()
+        .padding(.horizontal, 26)
+        .padding(.top, 22)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color.black.ignoresSafeArea())
+        .navigationTitle("Edit Fortune")
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear { text = store.fortunes[index] }
     }
 }
 
@@ -96,5 +72,5 @@ struct EditFortuneView: View {
     NavigationStack {
         FortunesView()
     }
-    .environment(FortuneStore(defaults: UserDefaults(suiteName: "preview")!))
+    .environment(FortuneStore(storeURL: nil))
 }
