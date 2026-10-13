@@ -34,7 +34,7 @@ struct MenuView: View {
         .alert("About CootieCatcher", isPresented: $showingAbout) {
             Button("Cool") {}
         } message: {
-            Text("By Anna Billstrom, with some help from her big sister Jennifer Huber.\n\n\(Self.versionAndBuild)")
+            Text("By Anna Billstrom, with some help from her big sister Jennifer Huber.\n\nFirst written in 2010.\n\(Self.versionAndBuild)")
         }
     }
 
