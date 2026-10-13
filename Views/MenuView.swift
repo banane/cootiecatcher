@@ -34,8 +34,16 @@ struct MenuView: View {
         .alert("About CootieCatcher", isPresented: $showingAbout) {
             Button("Cool") {}
         } message: {
-            Text("By Anna Billstrom, with some help from her big sister Jennifer Huber.")
+            Text("By Anna Billstrom, with some help from her big sister Jennifer Huber.\n\n\(Self.versionAndBuild)")
         }
+    }
+
+    /// "Version 3.0 (101)", from MARKETING_VERSION and CURRENT_PROJECT_VERSION.
+    static var versionAndBuild: String {
+        let info = Bundle.main.infoDictionary
+        let version = info?["CFBundleShortVersionString"] as? String ?? "?"
+        let build = info?["CFBundleVersion"] as? String ?? "?"
+        return "Version \(version) (\(build))"
     }
 }
 
