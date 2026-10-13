@@ -299,7 +299,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 3.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher;
+				PRODUCT_BUNDLE_IDENTIFIER = 953GJE7N3Z;
 				PRODUCT_NAME = Cootie;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -346,7 +346,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 3.0;
 				OTHER_CFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher;
+				PRODUCT_BUNDLE_IDENTIFIER = 953GJE7N3Z;
 				PRODUCT_NAME = Cootie;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
