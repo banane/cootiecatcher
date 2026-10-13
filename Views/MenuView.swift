@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// MenuViewController from 2015: white rows on the me_jenny photo. Contact Us, I've got an idea and
+/// MenuViewController from 2015: white rows on black, with the me_jenny photo centered below them. Contact Us, I've got an idea and
 /// Discuss Cootie! went with the UserVoice SDK in 2024.
 struct MenuView: View {
     @State private var showingAbout = false
@@ -15,14 +15,19 @@ struct MenuView: View {
             .font(Theme.font(18))
             .listRowSeparator(.hidden)
             .listRowBackground(Color.clear)
+
+            Image("me_jenny")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: 320)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 24)
+                .accessibilityLabel("Anna and Jennifer")
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.clear)
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
-        .background {
-            Image("me_jenny")
-                .resizable()
-                .ignoresSafeArea(edges: .bottom)
-        }
         .background(Color.black.ignoresSafeArea())
         .navigationTitle("Menu")
         .navigationBarTitleDisplayMode(.inline)
