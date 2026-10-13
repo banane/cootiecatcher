@@ -3,94 +3,80 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		9517278811880178003120ED /* cootie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9517278711880178003120ED /* cootie.wav */; };
-		95426308114D92CB00AA5D28 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95426306114D92CB00AA5D28 /* RootViewController.xib */; };
-		9546DA1211728A050098EEA7 /* wide.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546DA1111728A050098EEA7 /* wide.png */; };
-		9546DA1411728A110098EEA7 /* tall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546DA1311728A110098EEA7 /* tall.png */; };
-		9546DA1611728A190098EEA7 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9546DA1511728A190098EEA7 /* closed.png */; };
-		955399D61176744A00ED696E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 955399D51176744A00ED696E /* Icon.png */; };
-		957A93031159BB1F006760A3 /* FortuneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 957A93011159BB1F006760A3 /* FortuneViewController.xib */; };
-		9588982E115BF5B60008AB8D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9588982D115BF5B60008AB8D /* DetailViewController.xib */; };
-		95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E2A6D4119A66B2004E0D4D /* me_jenny.png */; };
-		ED417CF21BEB137800704A40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED417CF11BEB137800704A40 /* Images.xcassets */; };
-		FCA279E22C0ADE4000DC4C86 /* Button+Cootie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */; };
-		FCA279E42C0AE68500DC4C86 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279E32C0AE68500DC4C86 /* DetailVC.swift */; };
-		FCA279E62C0AF82000DC4C86 /* FortuneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */; };
-		FCA279E82C0BE0F700DC4C86 /* Fortunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */; };
-		FCA279EB2C0BE75000DC4C86 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279EA2C0BE75000DC4C86 /* MenuVC.swift */; };
-		FCA279ED2C0C00DD00DC4C86 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279EC2C0C00DD00DC4C86 /* RootVC.swift */; };
-		FCA279EF2C0D29DB00DC4C86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA279EE2C0D29DB00DC4C86 /* AppDelegate.swift */; };
-		FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */; };
-		FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */; };
+		FCA6607B30706779004D6792 /* CootieCatcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6607A30706779004D6792 /* CootieCatcherApp.swift */; };
+		FCA6607D307068ED004D6792 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FCA6607C307068ED004D6792 /* PrivacyInfo.xcprivacy */; };
+		FCC9F0B1306F4D0D001238D9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC9F0B0306F4D0D001238D9 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FCB00000000000000001001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D6058900D05DD3D006BFB54;
+			remoteInfo = Cootie;
+		};
+		FCB00000000000000002001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D6058900D05DD3D006BFB54;
+			remoteInfo = Cootie;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Cootie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cootie.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8D1107310486CEB800E47090 /* Cootie-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cootie-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		9512086A115952D80009A649 /* Cootie2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cootie2-Info.plist"; sourceTree = "<group>"; };
-		9517278711880178003120ED /* cootie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cootie.wav; sourceTree = "<group>"; };
-		95426306114D92CB00AA5D28 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RootViewController.xib; path = Classes/RootViewController.xib; sourceTree = "<group>"; };
-		9546DA1111728A050098EEA7 /* wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wide.png; sourceTree = "<group>"; };
-		9546DA1311728A110098EEA7 /* tall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tall.png; sourceTree = "<group>"; };
-		9546DA1511728A190098EEA7 /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
-		955399D51176744A00ED696E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		957A93011159BB1F006760A3 /* FortuneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FortuneViewController.xib; path = Classes/FortuneViewController.xib; sourceTree = "<group>"; };
-		9588982D115BF5B60008AB8D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DetailViewController.xib; path = Classes/DetailViewController.xib; sourceTree = "<group>"; };
-		95E2A6D4119A66B2004E0D4D /* me_jenny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_jenny.png; sourceTree = "<group>"; };
-		ED417CF11BEB137800704A40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Cootie/Images.xcassets; sourceTree = "<group>"; };
-		FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Cootie.swift"; sourceTree = "<group>"; };
-		FCA279E32C0AE68500DC4C86 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneVC.swift; sourceTree = "<group>"; };
-		FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortunes.swift; sourceTree = "<group>"; };
-		FCA279EA2C0BE75000DC4C86 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
-		FCA279EC2C0C00DD00DC4C86 /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
-		FCA279EE2C0D29DB00DC4C86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WalterTurncoat.ttf; sourceTree = "<group>"; };
-		FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuViewController.xib; path = Classes/MenuViewController.xib; sourceTree = "<group>"; };
+		FCA6607A30706779004D6792 /* CootieCatcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CootieCatcherApp.swift; sourceTree = "<group>"; };
+		FCA6607C307068ED004D6792 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		FCB00000000000000001002 /* CootieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CootieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCB00000000000000002002 /* CootieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CootieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCC9F0B0306F4D0D001238D9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FCA660793070671B004D6792 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+		FCA6608530706972004D6792 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+		FCA6609730706C77004D6792 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+		FCB00000000000000001003 /* CootieTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CootieTests; sourceTree = "<group>"; };
+		FCB00000000000000002003 /* CootieUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CootieUITests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB00000000000000001004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB00000000000000002004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				FCA279EE2C0D29DB00DC4C86 /* AppDelegate.swift */,
-				FCA279EC2C0C00DD00DC4C86 /* RootVC.swift */,
-				FCA279E52C0AF82000DC4C86 /* FortuneVC.swift */,
-				FCA279E32C0AE68500DC4C86 /* DetailVC.swift */,
-				FCA279EA2C0BE75000DC4C86 /* MenuVC.swift */,
-				FCA279A92C0ABE6900DC4C86 /* Button+Cootie.swift */,
-				FCA279E72C0BE0F700DC4C86 /* Fortunes.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* Cootie.app */,
+				FCB00000000000000001002 /* CootieTests.xctest */,
+				FCB00000000000000002002 /* CootieUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,51 +84,17 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				ED417CF11BEB137800704A40 /* Images.xcassets */,
-				080E96DDFE201D6D7F000001 /* Classes */,
-				FCD4AC201BE3D94700E34A85 /* Views */,
-				29B97317FDCFA39411CA2CEA /* Resources-iPhone */,
-				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				FCA6607C307068ED004D6792 /* PrivacyInfo.xcprivacy */,
+				FCA6607A30706779004D6792 /* CootieCatcherApp.swift */,
+				FCA660793070671B004D6792 /* Model */,
+				FCA6608530706972004D6792 /* Views */,
+				FCC9F0B0306F4D0D001238D9 /* Media.xcassets */,
+				FCA6609730706C77004D6792 /* Resources */,
+				FCB00000000000000001003 /* CootieTests */,
+				FCB00000000000000002003 /* CootieUITests */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				9512086A115952D80009A649 /* Cootie2-Info.plist */,
 			);
 			name = CustomTemplate;
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources-iPhone */ = {
-			isa = PBXGroup;
-			children = (
-				FCB9241A1BE956A2006EB199 /* WalterTurncoat.ttf */,
-				9517278711880178003120ED /* cootie.wav */,
-				95E2A6D4119A66B2004E0D4D /* me_jenny.png */,
-				955399D51176744A00ED696E /* Icon.png */,
-				9546DA1511728A190098EEA7 /* closed.png */,
-				9546DA1311728A110098EEA7 /* tall.png */,
-				9546DA1111728A050098EEA7 /* wide.png */,
-				8D1107310486CEB800E47090 /* Cootie-Info.plist */,
-			);
-			name = "Resources-iPhone";
-			sourceTree = "<group>";
-		};
-		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				1D30AB110D05D00D00671497 /* Foundation.framework */,
-				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FCD4AC201BE3D94700E34A85 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				FCD292C31BE7E60200F5BDDC /* MenuViewController.xib */,
-				9588982D115BF5B60008AB8D /* DetailViewController.xib */,
-				95426306114D92CB00AA5D28 /* RootViewController.xib */,
-				957A93011159BB1F006760A3 /* FortuneViewController.xib */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,10 +112,57 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				FCA660793070671B004D6792 /* Model */,
+				FCA6608530706972004D6792 /* Views */,
+				FCA6609730706C77004D6792 /* Resources */,
+			);
 			name = Cootie;
 			productName = Cootie;
 			productReference = 1D6058910D05DD3D006BFB54 /* Cootie.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FCB00000000000000001005 /* CootieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCB0000000000000000100A /* Build configuration list for PBXNativeTarget "CootieTests" */;
+			buildPhases = (
+				FCB00000000000000001007 /* Sources */,
+				FCB00000000000000001004 /* Frameworks */,
+				FCB00000000000000001006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCB00000000000000001008 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FCB00000000000000001003 /* CootieTests */,
+			);
+			name = CootieTests;
+			productName = CootieTests;
+			productReference = FCB00000000000000001002 /* CootieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FCB00000000000000002005 /* CootieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCB0000000000000000200A /* Build configuration list for PBXNativeTarget "CootieUITests" */;
+			buildPhases = (
+				FCB00000000000000002007 /* Sources */,
+				FCB00000000000000002004 /* Frameworks */,
+				FCB00000000000000002006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCB00000000000000002008 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FCB00000000000000002003 /* CootieUITests */,
+			);
+			name = CootieUITests;
+			productName = CootieUITests;
+			productReference = FCB00000000000000002002 /* CootieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -171,13 +170,15 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
-				ORGANIZATIONNAME = banane.com;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 3PKSYT4R4Q;
-						LastSwiftMigration = 1430;
+						LastSwiftMigration = 2700;
+					};
+					FCB00000000000000001005 = {
+						TestTargetID = 1D6058900D05DD3D006BFB54;
+					};
+					FCB00000000000000002005 = {
+						TestTargetID = 1D6058900D05DD3D006BFB54;
 					};
 				};
 			};
@@ -187,16 +188,15 @@
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
-				fr,
-				ja,
 				Base,
-				de,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* Cootie */,
+				FCB00000000000000001005 /* CootieTests */,
+				FCB00000000000000002005 /* CootieUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -206,18 +206,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95426308114D92CB00AA5D28 /* RootViewController.xib in Resources */,
-				957A93031159BB1F006760A3 /* FortuneViewController.xib in Resources */,
-				9588982E115BF5B60008AB8D /* DetailViewController.xib in Resources */,
-				9546DA1211728A050098EEA7 /* wide.png in Resources */,
-				9546DA1411728A110098EEA7 /* tall.png in Resources */,
-				9546DA1611728A190098EEA7 /* closed.png in Resources */,
-				955399D61176744A00ED696E /* Icon.png in Resources */,
-				FCD292C51BE7E60200F5BDDC /* MenuViewController.xib in Resources */,
-				9517278811880178003120ED /* cootie.wav in Resources */,
-				ED417CF21BEB137800704A40 /* Images.xcassets in Resources */,
-				95E2A6D5119A66B2004E0D4D /* me_jenny.png in Resources */,
-				FCB9241B1BE956A2006EB199 /* WalterTurncoat.ttf in Resources */,
+				FCA6607D307068ED004D6792 /* PrivacyInfo.xcprivacy in Resources */,
+				FCC9F0B1306F4D0D001238D9 /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB00000000000000001006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB00000000000000002006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,91 +232,131 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA279E42C0AE68500DC4C86 /* DetailVC.swift in Sources */,
-				FCA279EF2C0D29DB00DC4C86 /* AppDelegate.swift in Sources */,
-				FCA279E62C0AF82000DC4C86 /* FortuneVC.swift in Sources */,
-				FCA279E22C0ADE4000DC4C86 /* Button+Cootie.swift in Sources */,
-				FCA279ED2C0C00DD00DC4C86 /* RootVC.swift in Sources */,
-				FCA279E82C0BE0F700DC4C86 /* Fortunes.swift in Sources */,
-				FCA279EB2C0BE75000DC4C86 /* MenuVC.swift in Sources */,
+				FCA6607B30706779004D6792 /* CootieCatcherApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB00000000000000001007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCB00000000000000002007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FCB00000000000000001008 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D6058900D05DD3D006BFB54 /* Cootie */;
+			targetProxy = FCB00000000000000001001 /* PBXContainerItemProxy */;
+		};
+		FCB00000000000000002008 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D6058900D05DD3D006BFB54 /* Cootie */;
+			targetProxy = FCB00000000000000002001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 100;
-				EAGER_LINKING = YES;
+				CURRENT_PROJECT_VERSION = 101;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3PKSYT4R4Q;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_INPUT_FILETYPE = automatic;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Cootie_Prefix.pch;
-				INFOPLIST_FILE = "Cootie-Info.plist";
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleDisplayName = CootieCatcher;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MARKETING_VERSION = 2.0;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INSTALL_PATH = /Applications;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 3.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher;
 				PRODUCT_NAME = Cootie;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 100;
-				EAGER_LINKING = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 101;
+				DEVELOPMENT_TEAM = 3PKSYT4R4Q;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 3PKSYT4R4Q;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
-				GCC_INPUT_FILETYPE = automatic;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Cootie_Prefix.pch;
-				INFOPLIST_FILE = "Cootie-Info.plist";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleDisplayName = CootieCatcher;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MARKETING_VERSION = 2.0;
-				ONLY_ACTIVE_ARCH = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INSTALL_PATH = /Applications;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 3.0;
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher;
 				PRODUCT_NAME = Cootie;
-				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -320,86 +364,112 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = YES;
-				DOCC_EXTRACT_SWIFT_INFO_FOR_OBJC_SYMBOLS = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DOCC_EXTRACT_OBJC_INFO_FOR_SWIFT_SYMBOLS = YES;
-				DOCC_EXTRACT_SWIFT_INFO_FOR_OBJC_SYMBOLS = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				ONLY_ACTIVE_ARCH = YES;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				SDKROOT = iphoneos;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCB0000000000000000100B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3PKSYT4R4Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cootie.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cootie";
+			};
+			name = Debug;
+		};
+		FCB0000000000000000100C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3PKSYT4R4Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cootie.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cootie";
+			};
+			name = Release;
+		};
+		FCB0000000000000000200B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3PKSYT4R4Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Cootie;
+			};
+			name = Debug;
+		};
+		FCB0000000000000000200C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3PKSYT4R4Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banane.cootiecatcher.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Cootie;
 			};
 			name = Release;
 		};
@@ -420,6 +490,24 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCB0000000000000000100A /* Build configuration list for PBXNativeTarget "CootieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCB0000000000000000100B /* Debug */,
+				FCB0000000000000000100C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCB0000000000000000200A /* Build configuration list for PBXNativeTarget "CootieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCB0000000000000000200B /* Debug */,
+				FCB0000000000000000200C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
